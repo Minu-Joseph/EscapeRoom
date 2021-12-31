@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <script>
+        var keyFlag = "false";
+        var paperFlag = "false"
+        function showMianPage() {
+            $("#Section2").hide();
+            $("#Section3").hide();
+            $("#Section1").show();
+            $("#Section4").hide();
+            $("#Section5").hide();
+            $("#Section6").hide();
+            $("#Section7").hide();
+            $("#Section8").hide();
+
+        }
+        function jsFunction() {
+            alert("inside")
+            if (document.getElementById('chkComputer').checked) {
+                $("#Section1").hide();
+                $("#Section2").show();
+                $("#Section3").hide();
+                $("#Section4").hide();
+
+            } else if (document.getElementById('chkMainroomSection2').checked) {
+                alert("inside section2")
+                $("#Section2").hide();
+                $("#Section3").hide();
+                $("#Section1").show();
+                $("#Section4").hide();
+            }
+            else if (document.getElementById('chkMainroom').checked) {
+                $("#Section2").hide();
+                $("#Section3").hide();
+                $("#Section1").show();
+                $("#Section4").hide();
+            }
+            else if (document.getElementById('chkPlant').checked) {
+                $("#Section2").hide();
+                $("#Section3").show();
+                $("#Section1").hide();
+                $("#Section4").hide();
+            }
+
+            else if (document.getElementById('chkkey').checked) {
+                keyFlag = "true";
+                $("#Section2").hide();
+                $("#Section3").hide();
+                $("#Section1").show();
+            }
+
+            else if (document.getElementById('chkpaper').checked) {
+                paperFlag = true;
+                $("#Section2").hide();
+                $("#Section3").hide();
+                $("#Section1").hide();
+                $("#Section4").hide();
+                $("#Section5").hide();
+                $("#Section6").show();
+            }
+            else if (document.getElementById('chkDrawer').checked) {
+
+
+                if (keyFlag == "false") {
+                    $("#Section2").hide();
+                    $("#Section3").hide();
+                    $("#Section1").hide();
+                    $("#Section4").show();
+                    $("#Section5").hide();
+
+                }
+                if (keyFlag == "true") {
+                    $("#Section2").hide();
+                    $("#Section3").hide();
+                    $("#Section1").hide();
+                    $("#Section4").hide();
+                    $("#Section5").show();
+
+                }
+            }
+            else if (document.getElementById('chkPasswd').checked) {
+
+                if (paperFlag = "true") {
+                    if (txtpwd.value != 'TAKI') {
+                        $("#Section7").show();
+                        $("#Section2").hide();
+                        $("#Section3").hide();
+                        $("#Section1").hide();
+                        $("#Section4").hide();
+                        $("#Section5").hide();
+                        $("#Section6").hide();
+                        $("#Section8").hide();
+                    }
+
+                    if (txtpwd.value == 'TAKI') {
+                        $("#Section7").hide();
+                        $("#Section2").hide();
+                        $("#Section3").hide();
+                        $("#Section1").hide();
+                        $("#Section4").hide();
+                        $("#Section5").hide();
+                        $("#Section6").hide();
+                        $("#Section8").show();
+                    }
+                }
+                if(paperFlag = "flase")
+                {
+                        $("#Section7").show();
+                        $("#Section2").hide();
+                        $("#Section3").hide();
+                        $("#Section1").hide();
+                        $("#Section4").hide();
+                        $("#Section5").hide();
+                        $("#Section6").hide();
+                        $("#Section8").hide();
+                }
+
+            }
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-2">
+            <b> <label id="lblWelcome">Welcome Guest</label></b>
+        </div>
+    </div>
+    <div id="Section1">
+        <img src="level1/level1/00Sample.jpg" alt="Nature" style="width:100%;height :80%">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <p>You are trapped in a mansion . You need to solve some puzzles to escape</p>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkComputer" name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="chkComputer">Check the computer</label>
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkPlant" name="groupOfDefaultRadios" checked>
+                    <label class="custom-control-label" for="chkPlant">Check the plant</label>
+                </div>
+
+                <!-- Group of default radios - option 3 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkDrawer" name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="chkDrawer">Check the drawer</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkCupboard" name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="chkCupboard">Check the cupboard</label>
+                </div>
+
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkDoor" name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="chkDoor">Check the exit door</label>
+                </div>
+                <div></div>
+                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="jsFunction();">Go</a>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <div id="Section2" style="display: none;">
+        <img src="level1/level1/02Sample.jpg" alt="Nature" style="width:100%;height :80%">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <p>You are trapped in a mansion . You need to solve some puzzles to escape</p>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkPasswd" name="groupOfDefaultRadiosSection2">
+                    <label class="custom-control-label" for="chkPasswd">Enter the password</label>
+                    <input type="text" id="txtpwd">
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkMainroomSection2" name="groupOfDefaultRadiosSection2">
+                    <label class="custom-control-label" for="chkMainroomSection2">Go back to Main room</label>
+                </div>
+
+
+                <div></div>
+                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="jsFunction();">Go</a>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <div id="Section3" style="display: none;">
+        <img src="level1/level1/01Sample.jpg" alt="Nature" style="width:100%;height :80%">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <p>You are trapped in a mansion . You need to solve some puzzles to escape</p>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkkey" name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="chkkey">Pick up the key</label>
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkMainroom" name="groupOfDefaultRadios"
+                        checked>
+                    <label class="custom-control-label" for="chkMainroom">Go back to Main room</label>
+                </div>
+
+
+                <div></div>
+                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="jsFunction();">Go</a>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <div id="Section4" style="display: none;">
+        <div>
+            <img src="level1/level1/img2_drawer closed.jpg" alt="Nature" style="width:100%;height :80%">
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="showMianPage();">Go</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="Section5" style="display: none;">
+        <img src="level1/level1/img2_drawer opened.jpg" alt="Nature" style="width:100%;height :80%">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <p>You are trapped in a mansion . You need to solve some puzzles to escape</p>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkpaper" name="groupOfDefaultRadios">
+                    <label class="custom-control-label" for="chkpaper">Pick up the paper</label>
+                </div>
+
+                <!-- Group of default radios - option 2 -->
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="chkMainroom" name="groupOfDefaultRadios"
+                        checked>
+                    <label class="custom-control-label" for="chkMainroom">Go back to Main room</label>
+                </div>
+
+
+                <div></div>
+                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="jsFunction();">Go</a>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+
+    <div id="Section6" style="display: none;">
+        <div>
+            <img src="level1/level1/img2_drawer opened.jpg" alt="Nature" style="width:100%;height :80%">
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="showMianPage();">Go</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="Section7" style="display: none;">
+        <div>
+            <img src="level1/level1/img3_laptop locked.jpg" alt="Nature" style="width:100%;height :80%">
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="showMianPage();">Go</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="Section8" style="display: none;">
+        <div>
+            <img src="level1/level1/img3_laptop opened.jpg" alt="Nature" style="width:100%;height :80%">
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="showMianPage();">Go</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var name = localStorage.getItem('name')
+        var label_text = $('#lblWelcome').text(); //Get the text            
+        document.getElementById('lblWelcome').innerText = "Welcome " + name;
+    </script>
+
+</body>
+
+</html>
+
+<body>
