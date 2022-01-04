@@ -1,0 +1,42 @@
+document.addEventListener('DOMContentLoaded', function(){
+  var columns = document.querySelectorAll('.dev'),
+      sequence = '1234',
+      order = [],
+      reset = function(){
+        order = [];
+        columns.forEach(function(column){
+          column.style.backgroundColor = 'teal';
+        });
+      };
+
+  columns.forEach(function(column){
+    column.addEventListener('click', function(){
+      var data = this.dataset,
+          index = order.indexOf(data.index),
+          bgColor = index > -1 ? 'teal' : 'aqua';
+
+      if(index > -1){
+        order.splice(index, 1);
+      }else{
+        order.push(data.index);
+      }
+
+      this.style.backgroundColor = bgColor;
+
+      if(order.length === sequence.length){          
+        if(order.join('') === sequence){
+          alert('You guessed the correct order!');
+        }else{
+          alert('Please try again!')
+        }
+
+        reset();
+      }
+    });
+  });
+});
+
+<div class="dev one" data-index="1"></div>
+<div class="dev two" data-index="2"></div>
+<div class="dev three" data-index="3"></div>
+<div class="dev four" data-index="4"></div>

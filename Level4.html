@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <script>
+        var keyPillow = "false"
+        var keyRod = "false"
+        function closeSection2() {
+            $('#Section2').hide();
+        }
+        function closeSection3() {
+            $('#Section3').hide();
+        }
+        function openDiv1() {
+            keyPillow = "true"
+            $('#Section2').show();
+            if (keyRod == "true" && keyPillow == "true") {
+                localStorage.setItem('myPopup', "true");
+            }
+
+        }
+        function openDiv2() {
+            keyRod = "true"
+            $('#Section3').show();
+            if (keyRod == "true" && keyPillow == "true") {
+                localStorage.setItem('myPopup', "true");
+            }
+
+        }
+        // A $( document ).ready() block.
+        $(document).ready(function () {
+            if (keyRod == "true" && keyPillow == "true") {
+                localStorage.setItem('myPopup', "true");
+            }
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-2">
+            <b> <label id="lblWelcome">Welcome Guest</label></b>
+        </div>
+    </div>
+    <div>
+        <h1 style="padding-left: 470px;">ROOM 4 - STORE ROOM </h1>
+    </div>
+    <div id="Section1">
+        <img src="level4/level4/img0_main room.jpg" alt="" usemap="#workmap">
+        <map name="workmap">
+            <area shape="rect" coords="588,564,395,622" alt="oven" href="#" onclick="openDiv1();" />
+            <area shape="rect" coords="1147,482,1326,525" alt="drawer" href="#" onclick="openDiv2();" />
+            <area shape="rect" coords="325,392,500,367" alt="table" href="#" onclick="openDiv3();" />
+            <area shape="rect" coords="1175,174,1298,352" alt="machine" href="#" onclick="openDiv4();" />
+            <area shape="rect" coords="853,397,1048,142" alt="door" href="#" onclick="openDiv5();" />
+        </map>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <p>You are trapped in a mansion . You need to solve some puzzles to escape</p>
+            </div>
+        </div>
+
+        <div id="Section2" style="display: none;">
+            <div style="position: absolute;top: 70%; left: 90%; transform: translate(-70%,-70%)">
+                <img src="level4/level4/img2_pillow 2.jpg" alt="" usemap="#workmap1">
+                <map name="workmap1">
+                    <area shape="rect" coords="55,249,-1,215" alt="fig2" href="#" onclick="closeSection2();" />
+                </map>
+            </div>
+        </div>
+        <div id="Section3" style="display: none;">
+            <div style="position: absolute;top: 70%; left: 90%; transform: translate(-70%,-70%)">
+                <img src="level4/level4/img1_bed 2.jpg" alt="" usemap="#workmap2">
+                <map name="workmap2">
+                    <area shape="rect" coords="-1,211,73,249" alt="fig2" href="#" onclick="closeSection3();" />
+                </map>
+            </div>
+        </div>
+        <div id="Section4" style="display: none;">
+            <div style="position: absolute;top: 90%; left: 90%; transform: translate(-90%,-90%)">
+                <img src="level4/level4/img3_ make hammer.jpg" alt="" usemap="#workmap3">
+                <map name="workmap3">
+                    <area shape="rect" coords="-1,211,73,249" alt="fig2" href="#" onclick="closeSection4();" />
+                </map>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="Section10" style="display: none;">
+        <div>
+            <img src="level3/img7_exit door opned_Moment_final.jpg" alt="Nature">
+
+        </div>
+    </div>
+    <script>
+        var name = localStorage.getItem('name')
+        var label_text = $('#lblWelcome').text(); //Get the text            
+        document.getElementById('lblWelcome').innerText = "Welcome " + name;
+        alert(localStorage.getItem('myPopup'))
+        if (localStorage.getItem('myPopup') == "true") {
+            $('#Section4').show();
+            localStorage.setItem('myPopup', "false");
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+<body>

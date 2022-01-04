@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <script>
+        var keyOven = "fallse";
+        var keyDrawer = "false"
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var columns = document.querySelectorAll('.dev'),
+                sequence = '12345',
+                order = [],
+                reset = function () {
+                    order = [];
+                    columns.forEach(function (column) {
+                        column.style.backgroundColor = 'white';
+                    });
+                };
+
+            columns.forEach(function (column) {
+                column.addEventListener('click', function () {
+                    var data = this.dataset,
+                        index = order.indexOf(data.index),
+                        bgColor = index > -1 ? 'white' : 'yellow';
+
+                    if (index > -1) {
+                        order.splice(index, 1);
+                    } else {
+                        order.push(data.index);
+                    }
+
+                    this.style.backgroundColor = bgColor;
+
+                    if (order.length === sequence.length) {
+                        if (order.join('') === sequence) {
+                            $('#Section5').show();
+                            $('#Section2').hide();
+                            $('#Section1').hide();
+                            $('#Section3').hide();
+                            $('#Section4').hide();
+                            $('#Section6').hide();
+                            localStorage.setItem('keyMachine', "true");
+                            //alert('You guessed the correct order!');
+
+                        } else {
+                            //alert('Please try again!')
+                        }
+
+                        reset();
+                    }
+                });
+            });
+        });
+
+
+        function openDiv1() {
+            localStorage.setItem('keyOven', "true");
+            keyOven = "true"
+            $('#Section2').show();
+            $('#Section1').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+        }
+        function openDiv2() {
+            localStorage.setItem('keyDrawer', "true");
+            keyDrawer = "true"
+            $('#Section3').show();
+            $('#Section1').hide();
+            $('#Section2').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+        }
+        function openDiv3() {
+            // alert(localStorage.getItem('keyOven'))
+            //alert(localStorage.getItem('keyDrawer'))
+            if (localStorage.getItem('keyOven') == "true" && localStorage.getItem('keyDrawer') == "true") {
+                $('#Section6').hide();
+                $('#Section1').hide();
+                $('#Section2').hide();
+                $('#Section3').hide();
+                $('#Section5').hide();
+                $('#Section4').show();
+            }
+            else {
+                $('#Section6').show();
+                $('#Section1').hide();
+                $('#Section2').hide();
+                $('#Section3').hide();
+                $('#Section5').hide();
+                $('#Section4').hide();
+            }
+        }
+        function openDiv4() {
+            if (localStorage.getItem('keyMachine') == "true") {
+                $('#Section7').hide();
+                $('#Section1').hide();
+                $('#Section2').hide();
+                $('#Section4').hide();
+                $('#Section5').hide();
+                $('#Section6').hide();
+                $('#Section3').hide();
+                $('#Section8').show();
+                localStorage.setItem('keyDoor', "true");
+            }
+            else {
+                $('#Section8').hide();
+                $('#Section1').hide();
+                $('#Section2').hide();
+                $('#Section4').hide();
+                $('#Section5').hide();
+                $('#Section6').hide();
+                $('#Section3').hide();
+                $('#Section7').show();
+            }
+        }
+        function openDiv5() {
+            
+            if (localStorage.getItem('keyDoor') == "true") {
+                $('#Section7').hide();
+                $('#Section1').hide();
+                $('#Section2').hide();
+                $('#Section4').hide();
+                $('#Section5').hide();
+                $('#Section6').hide();
+                $('#Section3').hide();
+                $('#Section10').show();
+                $('#Section8').hide();
+                $('#Section9').hide();
+            }
+            else {
+                $('#Section8').hide();
+                $('#Section7').hide();
+                $('#Section10').hide();
+                $('#Section1').hide();
+                $('#Section2').hide();
+                $('#Section4').hide();
+                $('#Section5').hide();
+                $('#Section6').hide();
+                $('#Section3').hide();
+                $('#Section9').show();
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-2">
+            <b> <label id="lblWelcome">Welcome Guest</label></b>
+        </div>
+    </div>
+    <div>
+        <h1 style="padding-left: 470px;">ROOM 3 - KITCHEN </h1>
+    </div>
+    <div id="Section1">
+        <img src="level3/img0_main room.jpg" alt="Nature" usemap="#workmap">
+        <map name="workmap">
+            <area shape="rect" coords="642,156,761,207" alt="oven" href="#" onclick="openDiv1();" />
+            <area shape="rect" coords="233,154,389,204" alt="drawer" href="#" onclick="openDiv2();" />
+            <area shape="rect" coords="325,392,500,367" alt="table" href="#" onclick="openDiv3();" />
+            <area shape="rect" coords="1175,174,1298,352" alt="machine" href="#" onclick="openDiv4();" />
+            <area shape="rect" coords="853,397,1048,142" alt="door" href="#" onclick="openDiv5();" />
+        </map>
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-6">
+                <p>You are trapped in a mansion . You need to solve some puzzles to escape</p>
+                <ul>
+                    <li>
+                        <label>Check the oven</label>
+                    </li>
+                    <li>
+                        <label>Check the drawer</label>
+                    </li>
+                    <li>
+                        <label>Make the Burger</label>
+                    </li>
+                    <li>
+                        <label>Check the Machine</label>
+                    </li>
+                    <li>
+                        <label>Check the exit door</label>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div id="Section2" style="display: none;">
+        <div>
+            <img src="level3/img1_owen opened.jpg" alt="Nature" usemap="#workmap1">
+
+            <map name="workmap1">
+                <area shape="rect" coords="-1,597,159,699" alt="fig2" href="Level3.html" />
+            </map>
+        </div>
+    </div>
+
+    <div id="Section3" style="display: none;">
+        <div>
+            <img src="level3/img2_drawer opened.jpg" alt="Nature" usemap="#workmap2">
+
+            <map name="workmap2">
+                <area shape="rect" coords="2,601,124,700" alt="fig2" href="Level3.html" />
+            </map>
+        </div>
+    </div>
+
+    <div id="Section4" style="display: none;">
+        <div class="row">
+            <div class="dev col" data-index="4">
+                <img src="level3/img3_kitchen table.jpg" alt="">
+            </div>
+            <div class="dev col" data-index="2">
+                <img src="level3/img4_stove.jpg" alt="">
+            </div>
+
+            <div class="row">
+                <div class="dev col" data-index="1">
+                    <img src="level3/img5_dining table 1.jpg" alt="">
+                </div>
+                <div class="dev col" data-index="5">
+                    <img src="level3/img5_diningtable3.jpg" alt="">
+                </div>
+                <div class="dev col" data-index="3">
+                    <img src="level3/img5_dining_table 4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Section5" style="display: none;">
+        <div>
+            <img src="level3/img5_dining table 2.jpg" alt="Nature" usemap="#workmap3">
+
+            <map name="workmap3">
+                <area shape="rect" coords="162,800,-1,684" alt="fig2" href="Level3.html" />
+            </map>
+        </div>
+    </div>
+
+    <div id="Section6" style="display: none;">
+        <div>
+            <img src="level3/img8_dining table.jpg" alt="Nature" usemap="#workmap4">
+
+            <map name="workmap4">
+                <area shape="rect" coords="162,800,-1,684" alt="fig2" href="Level3.html" />
+            </map>
+        </div>
+    </div>
+    <div id="Section7" style="display: none;">
+        <div>
+            <img src="level3/img6_burgur machine closed.jpg" alt="Nature" usemap="#workmap5">
+
+            <map name="workmap5">
+                <area shape="rect" coords="-1,600,143,697" alt="fig2" href="Level3.html" />
+            </map>
+        </div>
+    </div>
+    <div id="Section8" style="display: none;">
+        <div>
+            <img src="level3/img6_burgur machine opened.jpg" alt="Nature" usemap="#workmap6">
+
+            <map name="workmap6">
+                <area shape="rect" coords="0,607,146,700" alt="fig2" href="Level3.html" />
+            </map>
+        </div>
+    </div>
+    <div id="Section9" style="display: none;">
+        <div>
+            <img src="level3/img7_exit door closed.jpg" alt="Nature" usemap="#workmap7">
+
+            <map name="workmap7">
+                <area shape="rect" coords="1,693,168,798" alt="fig2" href="Level3.html" />
+            </map>
+        </div>
+    </div>
+    <div id="Section10" style="display: none;">
+        <div style="position: absolute;">
+            <img  src="level3/img7_exit door opned_Moment_final.jpg" alt="Nature">
+            <div style="position: absolute;top: 70%; left: 90%; transform: translate(-70%,-70%)">
+            <a class="btn btn-primary" style="width:100px;" href="Level4.html">Continue</a>
+        </div>
+        </div>
+    </div>
+    <script>
+        var name = localStorage.getItem('name')
+        var label_text = $('#lblWelcome').text(); //Get the text            
+        document.getElementById('lblWelcome').innerText = "Welcome " + name;
+    </script>
+
+</body>
+
+</html>
+
+<body>
