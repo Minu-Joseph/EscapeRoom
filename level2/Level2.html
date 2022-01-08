@@ -19,12 +19,39 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+            <script src="jquery.rwdImageMaps.min.js"></script>
+            <script src="jquery.rwdImageMaps.js"></script>
+            <script>
+                $(document).ready(function (e) {            
+                    $('img[usemap]').rwdImageMaps();
+                    $('area').on('click', function () {
+                       
+                        $('img[usemap]').rwdImageMaps();
+                       
+                    });
+                });
+            </script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    
+        <style>
+            img[usemap] {
+                border: none;
+                height: auto;
+                width: 100%;
+                /* width: auto; */
+            }
+            map area{
+                border: 1px solid red;
+            }
+        </style>
         <script>
+            function showCoords(event) {
+                var x = event.clientX;
+                var y = event.clientY;
+                var coords = "X coords: " + x + ", Y coords: " + y;
+                console.log(coords);
+            }
             var keyOven = "fallse";
             var keyDrawer = "false"
-    
             document.addEventListener('DOMContentLoaded', function () {
                 var columns = document.querySelectorAll('.dev'),
                     sequence = '12345',
@@ -274,8 +301,8 @@
             }
         }
     </script>
-    <body>
-        <div class="container-fluid">
+    <body onmousedown="showCoords(event)">
+        <div  class="container-fluid">
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-6"></div>
@@ -288,12 +315,13 @@
         </div>
         <div id="Section1">
             <img src="img0_main room.jpg" alt="Nature" usemap="#workmap">
-            <map name="workmap">
-                <area shape="rect" coords="600,500,359,169" alt="oven" href="#" onclick="openDiv1();" />
-                <area shape="rect" coords="215,534,3,725" alt="drawer" href="#" onclick="openDiv2();" />
-                <area shape="rect" coords="325,392,500,367" alt="table" href="#" onclick="openDiv3();" />
-                <area shape="rect" coords="1175,174,1298,352" alt="machine" href="#" onclick="openDiv4();" />
-                <area shape="rect" coords="853,397,1048,142" alt="door" href="#" onclick="openDiv5();" />
+            <map name="workmap"> 
+                <area style="border: 1px solid greenyellow !important;" shape="rect" coords="352,166,786,371" alt="oven" href="#" onclick="openDiv1();" />
+                <area shape="rect" coords="262,527,5,741" alt="drawer" href="#" onclick="openDiv2();" />
+                <area shape="rect" coords="458,660,258,448" alt="table" href="#" onclick="openDiv3();" />
+                <area shape="rect" coords="1263,673,865,203" alt="machine" href="#" onclick="openDiv4();" />
+                <area shape="rect" coords="1911,552,1659,445" alt="door" href="#" onclick="openDiv5();" />
+                <area shape="rect" coords="1690,410,1603,261" alt="door" href="#" onclick="openDiv5();" />
             </map>
             <div class="row">
                 <div class="col-sm-4"></div>
