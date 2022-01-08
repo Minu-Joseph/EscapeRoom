@@ -26,7 +26,7 @@
 						attrH = 'height',
 						w = $that.attr(attrW),
 						h = $that.attr(attrH);
-						
+						alert(w)
 					if (!w || !h) {
 						var temp = new Image();
 						temp.src = $that.attr('src');

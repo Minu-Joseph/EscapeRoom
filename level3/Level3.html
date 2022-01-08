@@ -25,8 +25,7 @@
     <script>
         $(document).ready(function (e) {            
             $('img[usemap]').rwdImageMaps();
-            $('area').on('click', function () {
-               
+            $('area').on('click', function () {               
                 $('img[usemap]').rwdImageMaps();
                
             });
@@ -46,7 +45,9 @@
         var keyOven = "false";
         var keyDrawer = "false"
 
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function () {                      
+                            
+           
             var columns = document.querySelectorAll('.dev'),
                 sequence = '12345',
                 order = [],
@@ -73,6 +74,7 @@
 
                     if (order.length === sequence.length) {
                         if (order.join('') === sequence) {
+                            $('img[usemap]').rwdImageMaps();   
                             $('#Section5').show();
                             $('#Section2').hide();
                             $('#Section1').hide();
@@ -279,7 +281,7 @@
             <div>
                 <img src="img5_dining table 2.jpg" alt="Nature" usemap="#workmap3">
                 <map name="workmap3">
-                    <area shape="rect" coords="-1,631,162,749" alt="" href="Level3.html" />
+                    <area shape="rect" coords="1,565,118,699" alt="burger" href="Level3.html" />
                 </map>
             </div>
         </div>

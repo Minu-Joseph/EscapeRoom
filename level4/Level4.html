@@ -23,15 +23,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="jquery.rwdImageMaps.min.js"></script>
     <script src="jquery.rwdImageMaps.js"></script>
-    <script>
-        $(document).ready(function (e) {            
-            $('img[usemap]').rwdImageMaps();
-            $('area').on('click', function () {               
-                $('img[usemap]').rwdImageMaps();
-               
-            });
-        });
-    </script>
     <style>
         img[usemap] {
             border: none;
@@ -40,6 +31,16 @@
             width: auto;
         }
     </style>
+    <script>
+        $(document).ready(function (e) {            
+            $('img[usemap]').rwdImageMaps();
+            $('area').on('click', function () {                           
+                $('img[usemap]').rwdImageMaps();
+               
+            });
+        });
+    </script>
+    
     <script>
         var keyPillow = "false"
         var keyRod = "false"
@@ -72,6 +73,7 @@
         {
             if(txtpwd.value == "536")
             {
+                $('img[usemap]').rwdImageMaps();   
                 $('#Section8').show();
                 $('#Section7').hide();
                 keyDoor ="true"
@@ -218,19 +220,19 @@
             </div>
         </div>
         <div id="Section8" style="display: none;">
-            <div style="position: absolute;top: 60%; left: 40%; transform: translate(-40%,-40%)">
+            <div style="position: absolute;top: 50%; left: 40%; transform: translate(-40%,-40%)">
                 <img src="img5_locker 3.jpg" alt="" usemap="#workmap6">
                 <map name="workmap6">
-                    <area shape="rect" coords="1,217,51,249" alt="fig2" href="#" onclick="closeSection8();" />
+                    <area shape="rect" coords="3,217,55,249" alt="fig2" href="#" onclick="closeSection8();" />
                 </map>
                 
             </div>
         </div>
         <div id="Section9" style="display: none;">
-            <div style="position: absolute;top: 60%; left: 40%; transform: translate(-40%,-40%)">
+            <div style="position: absolute;top: 50%; left: 50%; transform: translate(-40%,-40%)">
                 <img src="img6_exit door closed.jpg" alt="" usemap="#workmap7">
                 <map name="workmap7">
-                    <area shape="rect" coords="2,783,197,909" alt="fig2" href="#" onclick="closeSection9();" />
+                    <area shape="rect" coords="0,212,55,249" alt="fig2" href="#" onclick="closeSection9();" />
                 </map>
             </div>
         </div>
@@ -245,9 +247,8 @@
     <script>
         var name = localStorage.getItem('name')
         var label_text = $('#lblWelcome').text(); //Get the text            
-        document.getElementById('lblWelcome').innerText = "Welcome " + name;
-        
-
+        document.getElementById('lblWelcome').innerText = "Welcome " + name;        
+        $('img[usemap]').rwdImageMaps();
     </script>
 </div>
 </body>
