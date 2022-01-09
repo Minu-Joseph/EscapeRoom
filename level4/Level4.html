@@ -50,24 +50,39 @@
 
         function closeSection2() {
             $('#Section2').hide();
+            $('#Section1').show();
+            if (keyRod == "true" && keyPillow == "true") {
+                $('#Section4').show();
+                keyHammer = "true"
+            }
         }
         function closeSection3() {
             $('#Section3').hide();
+            $('#Section1').show();
+            if (keyRod == "true" && keyPillow == "true") {
+                $('#Section4').show();
+                keyHammer = "true"
+            }
         }
         function closeSection4() {
             $('#Section4').hide();
+            $('#Section1').show();
         }
         function closeSection5() {
             $('#Section5').hide();
+            $('#Section1').show();
         }
         function closeSection6() {
             $('#Section6').hide();
+            $('#Section1').show();
         }
         function closeSection8() {
             $('#Section8').hide();
+            $('#Section1').show();
         }
         function closeSection9() {
             $('#Section9').hide();
+            $('#Section1').show();
         }
         function checkPwd()
         {
@@ -82,23 +97,47 @@
                 $('#Section5').show();
                 $('#Section7').hide();
             }
+            $('#Section1').hide();
+            $('#Section3').hide();
+            $('#Section2').hide();
+            $('#Section6').hide();
+            $('#Section4').hide();            
+            $('#Section9').hide();
+            $('#Section10').hide();
+
         }
         function openDiv1() {
             keyPillow = "true"
             $('#Section2').show();
-            if (keyRod == "true") {
-                $('#Section4').show();
-                keyHammer = "true"
-            }
+            // if (keyRod == "true") {
+            //     $('#Section4').show();
+            //     keyHammer = "true"
+            // }
+            $('#Section1').hide();
+            $('#Section3').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
 
         }
         function openDiv2() {
             keyRod = "true"
             $('#Section3').show();
-            if (keyPillow == "true") {
-                $('#Section4').show();
-                keyHammer = "true"
-            }
+            // if (keyPillow == "true") {
+            //     $('#Section4').show();
+            //     keyHammer = "true"
+            // }
+            $('#Section1').hide();
+            $('#Section2').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
 
         }
        
@@ -110,7 +149,16 @@
             }
             else{
                 $('#Section6').show();
+                
             }
+            $('#Section1').hide();
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
 
         }
 
@@ -123,6 +171,14 @@
            else{
                $('#Section5').show();
            }
+            $('#Section1').hide();
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section6').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
 
        }
 
@@ -136,6 +192,14 @@
            else{
                $('#Section9').show();
            }
+            $('#Section5').hide();
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section6').hide();
+            $('#Section8').hide();            
+            $('#Section7').hide();
+            $('#Section1').hide();
 
        }
 
@@ -170,20 +234,20 @@
                 <p>You are trapped in a mansion . You need to solve some puzzles to escape</p>
             </div>
         </div>
-
+    </div>
         <div id="Section2" style="display: none;">
-            <div style="position: absolute;top: 50%; left: 50%; transform: translate(-70%,-70%)">
+            <div >
                 <img src="img2_pillow 2.jpg" alt="" usemap="#workmap1">
                 <map name="workmap1">
-                    <area shape="rect" coords="55,249,-1,215" alt="fig2" href="#" onclick="closeSection2();" />
+                    <area shape="rect" coords="3,649,159,747" alt="fig2" href="#" onclick="closeSection2();" />
                 </map>
             </div>
         </div>
         <div id="Section3" style="display: none;">
-            <div style="position: absolute;top: 50%; left: 50%; transform: translate(-70%,-70%)">
+            <div >
                 <img src="img1_bed 2.jpg" alt="" usemap="#workmap2">
                 <map name="workmap2">
-                    <area shape="rect" coords="-1,211,73,249" alt="fig2" href="#" onclick="closeSection3();" />
+                    <area shape="rect" coords="-1,638,159,749" alt="fig2" href="#" onclick="closeSection3();" />
                 </map>
             </div>
         </div>
@@ -196,47 +260,47 @@
             </div>
         </div>
         <div id="Section5" style="display: none;">
-            <div style="position: absolute;top: 40%; left: 40%; transform: translate(-40%,-40%)">
+            <div >
                 <img src="img5_locker 2.jpg" alt="" usemap="#workmap4">
                 <map name="workmap4">
-                    <area shape="rect" coords="-1,218,53,249" alt="fig2" href="#" onclick="closeSection5();" />
+                    <area shape="rect" coords="-1,631,136,749" alt="fig2" href="#" onclick="closeSection5();" />
                 </map>
             </div>
         </div>
         <div id="Section6" style="display: none;">
-            <div style="position: absolute;top: 40%; left: 40%; transform: translate(-40%,-40%)">
+            <div>
                 <img src="img5_locker 1.jpg" alt="" usemap="#workmap5">
                 <map name="workmap5">
-                    <area shape="rect" coords="1,217,51,249" alt="fig2" href="#" onclick="closeSection6();" />
+                    <area shape="rect" coords="-1,651,171,749" alt="fig2" href="#" onclick="closeSection6();" />
                 </map>
             </div>
         </div>
         <div id="Section7" style="display: none;">
-            <div style="position: absolute;top: 60%; left: 40%; transform: translate(-40%,-40%)">
-                <img src="img7_final hint.jpg" alt="" >
+            <div >
+                <img src="img7_final hint.jpg" alt="" style ="width:100%">
                 <input type ="text" id ="txtpwd" style="position: absolute;top: 90%; left: 70%; transform: translate(-40%,-40%)">
-                <a style="position: absolute;top: 90%; left: 90%; transform: translate(-40%,-40%)" href = "#" onclick="checkPwd();">Check</a>
+                <a style="position: absolute;top: 90%; left: 85%; transform: translate(-40%,-40%)" href = "#" onclick="checkPwd();">Check</a>
                 
             </div>
         </div>
         <div id="Section8" style="display: none;">
-            <div style="position: absolute;top: 50%; left: 40%; transform: translate(-40%,-40%)">
+            <div >
                 <img src="img5_locker 3.jpg" alt="" usemap="#workmap6">
                 <map name="workmap6">
-                    <area shape="rect" coords="3,217,55,249" alt="fig2" href="#" onclick="closeSection8();" />
+                    <area shape="rect" coords="5,634,177,750" alt="fig2" href="#" onclick="closeSection8();" />
                 </map>
                 
             </div>
         </div>
         <div id="Section9" style="display: none;">
-            <div style="position: absolute;top: 50%; left: 50%; transform: translate(-40%,-40%)">
+            <div >
                 <img src="img6_exit door closed.jpg" alt="" usemap="#workmap7">
                 <map name="workmap7">
-                    <area shape="rect" coords="0,212,55,249" alt="fig2" href="#" onclick="closeSection9();" />
+                    <area shape="rect" coords="0,643,158,750" alt="fig2" href="#" onclick="closeSection9();" />
                 </map>
             </div>
         </div>
-    </div>
+    
        
     <div id="Section10" style="display: none;">
         <div>
