@@ -44,11 +44,6 @@
 </head>
 <script>
     $('img[usemap]').rwdImageMaps();
-    var keyDrawer = "false";
-    var cd = "false";
-    var password = "false";
-    var pattern = "false";
-    var keyDoor = "false";
    
     function openDiv1() {
 
@@ -83,6 +78,7 @@
         $('#Section12').hide();
         $('#Section13').hide();
         $('#Section14').hide();
+        localStorage.setItem('lvl2DrawerKey',true);
 
     }
     function openDiv3() {
@@ -102,7 +98,7 @@
         $('#Section14').hide();
     }
     function openDiv4() {
-        if (localStorage.getItem('keyDrawer') == "true") {
+        if (localStorage.getItem('lvl2DrawerKey') == "true") {
             $('#Section5').show();
             $('#Section1').hide();
             $('#Section2').hide();
@@ -117,7 +113,7 @@
             $('#Section12').hide();
             $('#Section13').hide();
             $('#Section14').hide();
-            localStorage.setItem('cd', "true");
+            localStorage.setItem('lvl2Cd', "true");
         }
         else {
             $('#Section4').show();
@@ -137,7 +133,7 @@
         }
     }
     function openDiv5() {
-        if (localStorage.getItem('keyDoor') == "true") {
+        if (localStorage.getItem('lvl2DoorKey') == "true") {
             $('#Section14').show();
             $('#Section1').hide();
             $('#Section2').hide();
@@ -172,7 +168,7 @@
         }
     }
     function openDiv6() {
-        if (localStorage.getItem('pattern') == 'true') {
+        if (localStorage.getItem('lvl2Pattern') == 'true') {
             $('#Section11').show();
             $('#Section1').hide();
             $('#Section2').hide();
@@ -187,6 +183,7 @@
             $('#Section12').hide();
             $('#Section13').hide();
             $('#Section14').hide();
+            localStorage.setItem('lvl2DoorKey','true')
         }
         else {
             $('#Section10').show();
@@ -221,9 +218,9 @@
             $('#Section12').hide();
             $('#Section13').hide();
             $('#Section14').hide();
-            localStorage.setItem('pattern', true)
+            localStorage.setItem('lvl2Pattern', true)
         }
-        else if (localStorage.getItem('cd') == 'true') {
+        else if (localStorage.getItem('lvl2Cd') == 'true') {
             $('#Section6').show();
             $('#Section1').hide();
             $('#Section2').hide();
@@ -301,10 +298,10 @@
 
         <div id="Section3" style="display: none;">
             <div>
-                <img src="img1_sofa 2.jpg" alt="Nature" usemap="workmap2">
+                <img src="img1_sofa 2.jpg" alt="Nature" usemap="#workmap2">
 
                 <map name="workmap2">
-                    <area alt=""    href="Level2.html" coords="1,761,202,911,78,871,100,7053" shape="poly">
+                    <area alt="" href="Level2.html" coords="1,761,202,911,78,871,100,7053" shape="poly">
                 </map>
             </div>
         </div>
