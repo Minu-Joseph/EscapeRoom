@@ -171,6 +171,7 @@
                 $('#Section10').show();
                 $('#Section8').hide();
                 $('#Section9').hide();
+                setTimeout(function(){$('#lvlclearmodal').modal('show');},500)
             }
             else {
                 $('#Section8').hide();
@@ -325,9 +326,18 @@
         <div id="Section10" style="display: none;">
             <div style="position: absolute;">
                 <img src="img7_exit door opned.jpg" alt="Nature">
-                <div style="position: absolute;top: 70%; left: 90%; transform: translate(-70%,-70%)">
-                    <a class="btn btn-primary" style="width:100px;" href="../level4/Level4.html">Continue</a>
-                </div>
+                <div id="lvlclearmodal" class="modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                            <center>
+                            <p><strong>Congratulations...</strong><br>You have cleared level 3</p>
+                            <a href="../level4/Level4.html" class="btn btn-success">Proceed to level 4</a>
+                        </center>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
         <script>

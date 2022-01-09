@@ -36,7 +36,7 @@
         var keyFlag = "false";
         var paperFlag = "false"
         var compPwd = "false"
-        var keydoor ="false"
+        var keydoor ="true"
         function showMainPage() {
             $("#Section2").hide();
             $("#Section3").hide();
@@ -69,6 +69,7 @@
             $("#Section12").hide();
             $("#Section13").hide();
             $("#Section14").show();
+            setTimeout(function(){$('#lvlclearmodal').modal('show');},500)
 
         }
         function jsFunction() {
@@ -573,13 +574,18 @@
     <div id="Section14" style="display: none;">
         <div>
             <img src="img5_exitdoor opened_Moment.jpg" alt="Nature" style="width:100%;height :80%">
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-6">
-                <a class="btn btn-large  btn-secondary" style="width:100px;" >Continue</a>
-            </div>
+            <div id="lvlclearmodal" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-body">
+                        <center>
+                        <p><strong>Congratulations...</strong><br>You have cleared level 1</p>
+                        <a href="../level2/Level2.html" class="btn btn-success">Proceed to level 2</a>
+                    </center>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
     </div>
     <script>
