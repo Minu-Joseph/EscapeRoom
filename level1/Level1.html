@@ -33,6 +33,13 @@
         }
     </style>
     <script>
+        /* level 3 keys --remove */
+        localStorage.removeItem('keyDoor');
+        localStorage.removeItem('keyMachine');
+        localStorage.removeItem('keyOven');
+        localStorage.removeItem('keyDrawer');
+        
+        
         var keyFlag = "false";
         var paperFlag = "false"
         var compPwd = "false"
@@ -578,7 +585,7 @@
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-6">
-                <a class="btn btn-large  btn-secondary" style="width:100px;" >Continue</a>
+                <a class="btn btn-large  btn-secondary" style="width:100px;"  href="../level2/Level2.html">Continue</a>
             </div>
         </div>
     </div>
