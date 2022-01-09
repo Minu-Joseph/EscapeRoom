@@ -97,6 +97,7 @@
         $('#Section12').hide();
         $('#Section13').hide();
         $('#Section14').hide();
+        localStorage.setItem('lvl2Painting','true');
     }
     function openDiv4() {
         if (localStorage.getItem('lvl2DrawerKey') == "true") {
@@ -222,7 +223,7 @@
             $('#Section14').hide();
             localStorage.setItem('lvl2Pattern', true)
         }
-        else if (localStorage.getItem('lvl2Cd') == 'true') {
+        else if (localStorage.getItem('lvl2Cd') == 'true' && localStorage.getItem('lvl2Painting') == 'true') {
             $('#Section6').show();
             $('#Section1').hide();
             $('#Section2').hide();
