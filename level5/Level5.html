@@ -389,6 +389,7 @@
     }
     
     function openDiv9() {
+        console.log('called')
         //drawerBottom
         $('img[usemap]').rwdImageMaps();
         if(localStorage.getItem('lvl5DrawerBottom')=='true'){
@@ -564,7 +565,9 @@
     }
 
     function drawerBottomVerify(){
-        if(lvl5TxtPwd.value=="253"){
+        console.log(lvl5TxtPwd.value)
+        if(lvl5TxtPwd.value == "253"){
+            console.log('passed')
             localStorage.setItem('lvl5DrawerBottom','true')
         }
         openDiv9.call()
@@ -850,8 +853,8 @@
         <div id="Section18" style="display: none;">
             <div >
                 <img src="17_wooden safe closed.jpg" alt="Nature" usemap="#workmap17">
-                <input type ="text" id ="lvl5TxtPwd" style="position: absolute;top: 65%; left: 50%; transform: translate(-40%,-40%)">
-                <button class="btn btn-success" style="position: absolute;top: 70%; left: 50%; transform: translate(-40%,-40%)" onclick="drawerBottomVerify();">Check</button> 
+                <input type ="text" id ="lvl5TxtPwd" style="position: absolute;top: 80%; left: 50%; transform: translate(-40%,-40%)">
+                <button class="btn btn-success" style="position: absolute;top: 85%; left: 50%; transform: translate(-40%,-40%)" onclick="drawerBottomVerify();">Check</button> 
                 <map name="workmap17">
                     <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
                 </map>
