@@ -177,7 +177,6 @@
     
     function openDiv5() {
         //door
-        localStorage.setItem('lvl5Key','true');
         $('img[usemap]').rwdImageMaps();
         if(localStorage.getItem('lvl5Key')=='true'){
             $('#Section21').show();
@@ -200,7 +199,7 @@
             $('#Section17').hide();
             $('#Section18').hide();
             $('#Section19').hide();
-            $('#Section21').hide();
+            $('#Section20').hide();
             setTimeout(function(){$('#lvlclearmodal').modal('show');},500)
         }
         else{
@@ -389,7 +388,6 @@
     }
     
     function openDiv9() {
-        console.log('called')
         //drawerBottom
         $('img[usemap]').rwdImageMaps();
         if(localStorage.getItem('lvl5DrawerBottom')=='true'){
@@ -411,7 +409,7 @@
             $('#Section15').hide();
             $('#Section16').hide();
             $('#Section17').hide();
-            $('#Section19').hide();
+            $('#Section18').hide();
             $('#Section20').hide();
             $('#Section21').hide();
             localStorage.setItem('lvl5Key','true')
@@ -565,9 +563,7 @@
     }
 
     function drawerBottomVerify(){
-        console.log(lvl5TxtPwd.value)
         if(lvl5TxtPwd.value == "253"){
-            console.log('passed')
             localStorage.setItem('lvl5DrawerBottom','true')
         }
         openDiv9.call()
@@ -893,6 +889,7 @@
                 </div>
             </div>
         </div>
+    </div>
         <script>
             var name = localStorage.getItem('name')
             var label_text = $('#lblWelcome').text(); //Get the text            
@@ -941,7 +938,6 @@
             }, 1000); 
         </script>
 
-    </div>
 </body>
 
 </html>
