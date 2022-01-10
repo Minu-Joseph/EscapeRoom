@@ -479,12 +479,25 @@
                 if (distance <= 0) {
                     clearInterval(x);
                     localStorage.removeItem('saved_countdown');
-                    document.getElementById("demo").innerHTML = "EXPIRED";
+                    $('#timeUpModal').modal('show');
+                    // document.getElementById("demo").innerHTML = "EXPIRED";
                 }
-            }, 1000);
+            }, 1000); 
         </script>
+    </div>
 
 
+    <div id="timeUpModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <center>
+                        <p><strong>!!! TIME UP !!!</strong><br>YOU LOST THE GAME</p>
+                        <a href="../level1/Level1.html" class="btn btn-primary">RESTART GAME</a>
+                    </center>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
