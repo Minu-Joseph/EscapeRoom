@@ -74,27 +74,52 @@
     function openDiv2() {
         //blackBoard
         $('img[usemap]').rwdImageMaps();
-        $('#Section11').show();
-        $('#Section1').hide();   
-        $('#Section2').hide();
-        $('#Section3').hide();
-        $('#Section4').hide();
-        $('#Section5').hide();
-        $('#Section6').hide();
-        $('#Section7').hide();
-        $('#Section8').hide();
-        $('#Section9').hide();
-        $('#Section10').hide();
-        $('#Section12').hide();
-        $('#Section13').hide();
-        $('#Section14').hide();
-        $('#Section15').hide();
-        $('#Section16').hide();
-        $('#Section17').hide();
-        $('#Section18').hide();
-        $('#Section19').hide();
-        $('#Section20').hide();
-        $('#Section21').hide();
+        if(localStorage.getItem('scale')=='true'){
+            $('#Section12').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+        }
+        else{
+            $('#Section11').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+        }
     }
     
     function openDiv3() {
@@ -147,12 +172,118 @@
         $('#Section19').hide();
         $('#Section20').hide();
         $('#Section21').hide();
+        localStorage.setItem('lvl2Grill','true');
     }
     
     function openDiv5() {
         //door
+        localStorage.setItem('lvl5Key','true');
         $('img[usemap]').rwdImageMaps();
-        $('#Section20').show();
+        if(localStorage.getItem('lvl5Key')=='true'){
+            $('#Section21').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section21').hide();
+            setTimeout(function(){$('#lvlclearmodal').modal('show');},500)
+        }
+        else{
+            $('#Section20').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section21').hide();
+        }
+    }
+    
+    function openDiv6() {
+        //sun
+        $('img[usemap]').rwdImageMaps();
+        if(localStorage.getItem('lvl2Grill')=='true'){
+            $('#Section7').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+            }
+        else{
+            $('#Section6').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+        }
+    }
+    
+    function openDiv7() {
+        //weighScale
+        $('img[usemap]').rwdImageMaps();
+        if(localStorage.getItem('lvl5Ball')=='true'){
+        $('#Section17').show();
         $('#Section1').hide();   
         $('#Section2').hide();
         $('#Section3').hide();
@@ -169,41 +300,12 @@
         $('#Section14').hide();
         $('#Section15').hide();
         $('#Section16').hide();
-        $('#Section17').hide();
-        $('#Section18').hide();
-        $('#Section19').hide();
-        $('#Section21').hide();
-    }
-    
-    function openDiv6() {
-        //sun
-        $('img[usemap]').rwdImageMaps();
-        $('#Section6').show();
-        $('#Section1').hide();   
-        $('#Section2').hide();
-        $('#Section3').hide();
-        $('#Section4').hide();
-        $('#Section5').hide();
-        $('#Section7').hide();
-        $('#Section8').hide();
-        $('#Section9').hide();
-        $('#Section10').hide();
-        $('#Section11').hide();
-        $('#Section12').hide();
-        $('#Section13').hide();
-        $('#Section14').hide();
-        $('#Section15').hide();
-        $('#Section16').hide();
-        $('#Section17').hide();
         $('#Section18').hide();
         $('#Section19').hide();
         $('#Section20').hide();
         $('#Section21').hide();
-    }
-    
-    function openDiv7() {
-        //weighScale
-        $('img[usemap]').rwdImageMaps();
+        }
+        else{
         $('#Section16').show();
         $('#Section1').hide();   
         $('#Section2').hide();
@@ -225,32 +327,65 @@
         $('#Section19').hide();
         $('#Section20').hide();
         $('#Section21').hide();
+        }
     }
     
     function openDiv8() {
         //drawerTop
         $('img[usemap]').rwdImageMaps();
-        $('#Section14').show();
-        $('#Section1').hide();   
-        $('#Section2').hide();
-        $('#Section3').hide();
-        $('#Section4').hide();
-        $('#Section5').hide();
-        $('#Section6').hide();
-        $('#Section7').hide();
-        $('#Section8').hide();
-        $('#Section9').hide();
-        $('#Section10').hide();
-        $('#Section11').hide();
-        $('#Section12').hide();
-        $('#Section13').hide();
-        $('#Section15').hide();
-        $('#Section16').hide();
-        $('#Section17').hide();
-        $('#Section18').hide();
-        $('#Section19').hide();
-        $('#Section20').hide();
-        $('#Section21').hide();
+        if(localStorage.getItem('lvl5DrawerTop')=='true'){
+            $('#Section15').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+            localStorage.setItem('lvl5Ball','true');
+        }
+        else{
+            for(var i=0;i<6;i++){
+                document.getElementsByName('block1')[i].checked=false
+                document.getElementsByName('block2')[i].checked=false
+                document.getElementsByName('block3')[i].checked=false
+                document.getElementsByName('block4')[i].checked=false
+            }
+            $('#Section14').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();  
+        }
     }
     
     function openDiv9() {
@@ -305,6 +440,75 @@
         $('#Section21').hide();
     }
     
+    function openDiv11() {
+        $('img[usemap]').rwdImageMaps(); 
+        $('#Section3').show();
+        $('#Section1').hide();  
+        $('#Section2').hide();
+        $('#Section4').hide();
+        $('#Section5').hide();
+        $('#Section6').hide();
+        $('#Section7').hide();
+        $('#Section8').hide();
+        $('#Section9').hide();
+        $('#Section10').hide();
+        $('#Section11').hide();
+        $('#Section12').hide();
+        $('#Section13').hide();
+        $('#Section14').hide();
+        $('#Section15').hide();
+        $('#Section16').hide();
+        $('#Section17').hide();
+        $('#Section18').hide();
+        $('#Section19').hide();
+        $('#Section20').hide();
+        $('#Section21').hide();
+    }
+
+    function openDiv12() {
+        $('img[usemap]').rwdImageMaps(); 
+        $('#Section4').show();
+        $('#Section1').hide();  
+        $('#Section2').hide();
+        $('#Section3').hide();
+        $('#Section5').hide();
+        $('#Section6').hide();
+        $('#Section7').hide();
+        $('#Section8').hide();
+        $('#Section9').hide();
+        $('#Section10').hide();
+        $('#Section11').hide();
+        $('#Section12').hide();
+        $('#Section13').hide();
+        $('#Section14').hide();
+        $('#Section15').hide();
+        $('#Section16').hide();
+        $('#Section17').hide();
+        $('#Section18').hide();
+        $('#Section19').hide();
+        $('#Section20').hide();
+        $('#Section21').hide();
+        localStorage.setItem('lvl5Paper','true');
+    }
+    
+    function drawerTopVerify(){
+        if(
+            document.getElementsByName('block1')[4].checked &&
+            document.getElementsByName('block2')[0].checked &&
+            document.getElementsByName('block3')[2].checked &&
+            document.getElementsByName('block4')[3].checked
+        ){
+            localStorage.setItem('lvl5DrawerTop','true')
+        }
+        openDiv8.call()
+    }
+    
+    function secretDoorVerfiy(){
+        console.log(document.getElementsByName('1_1')[0].checked)
+        if(document.getElementsByName('1_1').checked){
+            alert("success")
+        }
+    }
     </script>
 
 <body>
@@ -323,16 +527,16 @@
         <div id="Section1">
             <img src="0_main room.jpg" alt="Nature" usemap="#workmap">
             <map name="workmap">
-                <area target="" alt="globe" title="" href="" coords="270,519,261,667,434,656,436,530" shape="poly" onclick="openDiv1()">
-                <area target="" alt="blackBoard" title="" href="" coords="347,283,344,498,515,498,524,344" shape="poly" onclick="openDiv2()">
-                <area target="" alt="table" title="" href="" coords="730,557,639,588,789,586,849,563" shape="poly" onclick="openDiv3()">
-                <area target="" alt="painting" title="" href="" coords="584,355,589,489,811,481,805,361" shape="poly" onclick="openDiv4()">
-                <area target="" alt="door" title="" href="" coords="925,367,926,656,1134,658,1127,373" shape="poly" onclick="openDiv5()">
-                <area target="" alt="sun" title="" href="" coords="1237,365,1243,481,1441,476,1439,371" shape="poly" onclick="openDiv6()">
-                <area target="" alt="weighScale" title="" href="" coords="1675,523,1621,584,1709,600,1722,543" shape="poly"  onclick="openDiv7()">
-                <area target="" alt="drawerTop" title="" href="" coords="1624,593,1633,631,1711,635,1713,591" shape="poly"  onclick="openDiv8()">
-                <area target="" alt="drawerBottom" title="" href="" coords="1624,637,1630,687,1709,705,1713,635" shape="poly" onclick="openDiv9()">
-                <area target="" alt="secretDoor" title="" href="" coords="1386,765,1444,801,1660,793,1570,761" shape="poly" onclick="openDiv10()">
+                <area target="" alt="globe" title="" coords="270,519,261,667,434,656,436,530" shape="poly" onclick="openDiv1()">
+                <area target="" alt="blackBoard" title="" coords="347,283,344,498,515,498,524,344" shape="poly" onclick="openDiv2()">
+                <area target="" alt="table" title="" coords="638,584,630,703,789,709,852,664,849,572,744,559" shape="poly" onclick="openDiv3()">
+                <area target="" alt="painting" title="" coords="584,355,589,489,811,481,805,361" shape="poly" onclick="openDiv4()">
+                <area target="" alt="door" title="" coords="925,367,926,656,1134,658,1127,373" shape="poly" onclick="openDiv5()">
+                <area target="" alt="sun" title="" coords="1237,365,1243,481,1441,476,1439,371" shape="poly" onclick="openDiv6()">
+                <area target="" alt="weighScale" title="" coords="1675,523,1621,584,1709,600,1722,543" shape="poly"  onclick="openDiv7()">
+                <area target="" alt="drawerTop" title="" coords="1624,593,1633,631,1711,635,1713,591" shape="poly"  onclick="openDiv8()">
+                <area target="" alt="drawerBottom" title="" coords="1624,637,1630,687,1709,705,1713,635" shape="poly" onclick="openDiv9()">
+                <area target="" alt="secretDoor" title="" coords="1386,765,1444,801,1660,793,1570,761" shape="poly" onclick="openDiv10()">
             </map>
             <div class="row">
                 <div class="col-sm-4"></div>
@@ -348,7 +552,8 @@
                 <img src="1_table without paper.jpg" alt="Nature" usemap="#workmap1">
 
                 <map name="workmap1">
-                    <area  alt="" coords="292,415,921,707"  shape="rect" href="javascript:openDiv2();">
+                    <area target="" alt="" title="" coords="391,636,980,786,1167,481,655,374" shape="poly" onclick="openDiv11()">
+                    <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
                 </map>
             </div>
         </div>
@@ -358,6 +563,7 @@
                 <img src="2_table with paper.jpg" alt="Nature" usemap="#workmap2">
 
                 <map name="workmap2">
+                    <area target="" alt="" title="" coords="1009,750,511,671,587,424,1118,471" shape="poly" onclick="openDiv12()">
                     <area alt="" href="Level5.html" coords="1,761,202,911,78,871,100,7053" shape="poly">
                 </map>
             </div>
@@ -420,6 +626,48 @@
                 <map name="workmap8">
                     <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
                 </map>
+                <div style="margin-top:5%;">
+                    <div class="row d-flex justify-content-center"><span style="font-size: larger;"><strong>ENTER PATTERN</strong></span></div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row1"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row1"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row1"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row1"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row1"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row2"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row2"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row2"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row2"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row2"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row3"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row3"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row3"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row3"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row3"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row4"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row4"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row4"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row4"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row4"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row5"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row5"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row5"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row5"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row5"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <button class="btn btn-success" onclick="secretDoorVerfiy()">PROCEED</button>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div id="Section10" style="display: none;">
@@ -460,6 +708,49 @@
                 <map name="workmap13">
                     <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
                 </map>
+                <div style="margin-top: 5%;">
+                    <div class="d-flex justify-content-around" style="margin-left: 16%;" ><img style="width: 10%; height: 10%;" src="13_drawer symbol 1.jpg" alt=""> <img style="width: 10%; height: 10%;" src="13_drawer symbol 2.jpg" alt=""> <img style="width: 10%; height: 10%;" src="13_drawer symbol 3.jpg" alt=""> <img style="width: 10%; height: 10%;" src="13_drawer symbol 4.jpg" alt=""> <img style="width: 10%; height: 10%;" src="13_drawer symbol 5.jpg" alt=""> <img style="width: 10%; height: 10%;" src="13_drawer symbol 6.jpg" alt=""> </div>
+                    
+                    <div class="d-flex justify-content-around" style="margin-top:10px;"><span style="font-weight: bolder;">Block 1</span>
+                     <span><input value="1" class="form-check-input" type="radio" name="block1"></span>
+                     <span><input value="2" class="form-check-input" type="radio" name="block1"></span>
+                     <span><input value="3" class="form-check-input" type="radio" name="block1"></span>
+                     <span><input value="4" class="form-check-input" type="radio" name="block1"></span>
+                     <span><input value="5" class="form-check-input" type="radio" name="block1"></span>
+                     <span><input value="6" class="form-check-input" type="radio" name="block1"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-around" style="margin-top:10px;"><span style="font-weight: bolder;">Block 2</span>
+                        <span><input value="1" class="form-check-input" type="radio" name="block2"></span>
+                        <span><input value="2" class="form-check-input" type="radio" name="block2"></span>
+                        <span><input value="3" class="form-check-input" type="radio" name="block2"></span>
+                        <span><input value="4" class="form-check-input" type="radio" name="block2"></span>
+                        <span><input value="5" class="form-check-input" type="radio" name="block2"></span>
+                        <span><input value="6" class="form-check-input" type="radio" name="block2"></span>
+                       </div>
+
+                       <div class="d-flex justify-content-around" style="margin-top:10px;"><span style="font-weight: bolder;">Block 3</span>
+                        <span><input value="1" class="form-check-input" type="radio" name="block3"></span>
+                        <span><input value="2" class="form-check-input" type="radio" name="block3"></span>
+                        <span><input value="3" class="form-check-input" type="radio" name="block3"></span>
+                        <span><input value="4" class="form-check-input" type="radio" name="block3"></span>
+                        <span><input value="5" class="form-check-input" type="radio" name="block3"></span>
+                        <span><input value="6" class="form-check-input" type="radio" name="block3"></span>
+                       </div>
+
+                       <div class="d-flex justify-content-around" style="margin-top:10px;"><span style="font-weight: bolder;">Block 4</span>
+                        <span><input value="1" class="form-check-input" type="radio" name="block4"></span>
+                        <span><input value="2" class="form-check-input" type="radio" name="block4"></span>
+                        <span><input value="3" class="form-check-input" type="radio" name="block4"></span>
+                        <span><input value="4" class="form-check-input" type="radio" name="block4"></span>
+                        <span><input value="5" class="form-check-input" type="radio" name="block4"></span>
+                        <span><input value="6" class="form-check-input" type="radio" name="block4"></span>
+                       </div>
+
+                       <div class="d-flex justify-content-around" style="margin-top:10px;">
+                           <button class="btn btn-success" onclick="drawerTopVerify();">PROCEED</button>
+                       </div>
+                </div>
             </div>
         </div>
         <div id="Section15" style="display: none;">
@@ -511,15 +802,15 @@
             </div>
         </div>
         <div id="Section21" style="display: none;">
-            <div >
+            <div>
                 <img src="19_main door opened.jpg" alt="Nature">
                 <div id="lvlclearmodal" class="modal" tabindex="-1" role="dialog">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
                                 <center>
-                                    <p><strong>Congratulations...</strong><br>You have cleared level 2</p>
-                                    <a href="../level3/Level3.html" class="btn btn-success">Proceed to level 3</a>
+                                    <p><strong>Congratulations...</strong><br>You have won the game</p>
+                                    <!-- <a href="../level3/Level3.html" class="btn btn-success">Proceed to level 3</a> -->
                                 </center>
                             </div>
                         </div>
