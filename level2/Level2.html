@@ -100,6 +100,7 @@
         localStorage.setItem('lvl2Painting','true');
     }
     function openDiv4() {
+        $('img[usemap]').rwdImageMaps();  
         if (localStorage.getItem('lvl2DrawerKey') == "true") {
             $('#Section5').show();
             $('#Section1').hide();
@@ -135,6 +136,7 @@
         }
     }
     function openDiv5() {
+        $('img[usemap]').rwdImageMaps();  
         if (localStorage.getItem('lvl2DoorKey') == "true") {
             $('#Section14').show();
             $('#Section1').hide();
@@ -170,6 +172,7 @@
         }
     }
     function openDiv6() {
+        $('img[usemap]').rwdImageMaps();  
         if (localStorage.getItem('lvl2Pattern') == 'true') {
             $('#Section11').show();
             $('#Section1').hide();
@@ -188,6 +191,13 @@
             localStorage.setItem('lvl2DoorKey','true')
         }
         else {
+            for(var i=0;i<5;i++){
+                    document.getElementsByName('row1')[i].checked=false
+                    document.getElementsByName('row2')[i].checked=false
+                    document.getElementsByName('row3')[i].checked=false
+                    document.getElementsByName('row4')[i].checked=false
+                    document.getElementsByName('row5')[i].checked=false
+                }
             $('#Section10').show();
             $('#Section1').hide();
             $('#Section2').hide();
@@ -202,6 +212,23 @@
             $('#Section12').hide();
             $('#Section13').hide();
             $('#Section14').hide();
+
+            setTimeout(function(){
+                $('#Section12').show();
+                $('#Section1').hide();
+                $('#Section2').hide();
+                $('#Section3').hide();
+                $('#Section4').hide();
+                $('#Section5').hide();
+                $('#Section6').hide();
+                $('#Section7').hide();
+                $('#Section8').hide();
+                $('#Section9').hide();
+                $('#Section10').hide();
+                $('#Section11').hide();
+                $('#Section13').hide();
+                $('#Section14').hide();
+            },500)
         }
     }
     function openDiv7() {
@@ -221,7 +248,6 @@
             $('#Section12').hide();
             $('#Section13').hide();
             $('#Section14').hide();
-            localStorage.setItem('lvl2Pattern', true)
         }
         else if (localStorage.getItem('lvl2Cd') == 'true' && localStorage.getItem('lvl2Painting') == 'true') {
             $('#Section6').show();
@@ -255,6 +281,20 @@
             $('#Section13').hide();
             $('#Section14').hide();
         }
+    }
+
+    
+    function lockerVerfiy(){
+        if(
+            document.getElementsByName('row1')[0].checked &&
+            document.getElementsByName('row2')[3].checked &&
+            document.getElementsByName('row3')[1].checked &&
+            document.getElementsByName('row4')[2].checked &&
+            document.getElementsByName('row5')[4].checked
+        ){
+            localStorage.setItem('lvl2Pattern','true')
+        }
+        openDiv6.call()
     }
 </script>
 
@@ -392,7 +432,48 @@
                 <img src="img5_locker password.jpg" alt="Nature" usemap="#workmap11">
                 <map name="workmap11">
                     <area target="" alt="" title="" href="Level2.html" coords="3,910,183,909,3,788" shape="poly">
-                </map>
+                </map><div style="margin-top:5%;">
+                    <div class="row d-flex justify-content-center"><span style="font-size: larger;"><strong>ENTER PATTERN</strong></span></div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row1"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row1"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row1"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row1"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row1"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row2"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row2"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row2"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row2"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row2"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row3"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row3"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row3"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row3"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row3"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row4"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row4"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row4"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row4"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row4"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row5"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="2" class="form-check-input" type="checkbox" name="row5"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="3" class="form-check-input" type="checkbox" name="row5"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="4" class="form-check-input" type="checkbox" name="row5"></span>
+                        <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="5" class="form-check-input" type="checkbox" name="row5"></span>
+                    </div>
+                    <div class="row d-flex justify-content-center" >
+                        <button class="btn btn-success" onclick="lockerVerfiy()">PROCEED</button>
+                    </div>
+
+                </div>
             </div>
         </div>
         <div id="Section13" style="display: none;">
