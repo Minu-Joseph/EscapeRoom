@@ -44,9 +44,11 @@
 
         var keyOven = "false";
         var keyDrawer = "false"
+        var keyPatty = "false"
+        var keyGemuse ="false"
 
         document.addEventListener('DOMContentLoaded', function () {                    
-           
+           var count = 0;
             var columns = document.querySelectorAll('.dev'),
                 sequence = '12345',
                 order = [],
@@ -70,7 +72,24 @@
                     }
 
                     this.style.backgroundColor = bgColor;
-
+                    if(bgColor == "yellow")
+                    {
+                        $(this).find("span").remove();
+                        count = count + 1     
+                        $(this).append($('<span class="badge badge-primary">'+count+'</span>'));                   
+                       
+                    }
+                    if(bgColor == "white")
+                    {
+                        $(this).find("span").remove(); 
+                        count = count - 1     
+                        //$(this).append($('<span class="badge badge-primary">'+count+'</span>'));                   
+                       
+                    }
+                    if(count == 5)
+                    {
+                        count = 0;
+                    }
                     if (order.length === sequence.length) {
                         if (order.join('') === sequence) {
                             $('img[usemap]').rwdImageMaps();   
@@ -114,10 +133,31 @@
             $('#Section5').hide();
             $('#Section6').hide();
         }
+        function openDiv2_1() {
+            localStorage.setItem('keyGemuse', "true");
+            keyGemuse = "true"
+            $('#Section2_1').show();
+            $('#Section1').hide();
+            $('#Section2').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+        }
+        function openDiv2_2() {
+            localStorage.setItem('keyPatty', "true");
+            keyPatty = "true"
+            $('#Section2_2').show();
+            $('#Section1').hide();
+            $('#Section2').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+        }
         function openDiv3() {
             // alert(localStorage.getItem('keyOven'))
             //alert(localStorage.getItem('keyDrawer'))
-            if (localStorage.getItem('keyOven') == "true" && localStorage.getItem('keyDrawer') == "true") {
+            if (localStorage.getItem('keyOven') == "true" && localStorage.getItem('keyDrawer') == "true"  &&
+            localStorage.getItem('keyPatty') == "true" && localStorage.getItem('keyGemuse') == "true") {
                 $('#Section6').hide();
                 $('#Section1').hide();
                 $('#Section2').hide();
@@ -211,6 +251,8 @@
             <map name="workmap">
                 <area shape="rect" coords="642,156,761,207" alt="oven" href="#" onclick="openDiv1();" />
                 <area shape="rect" coords="233,154,389,204" alt="drawer" href="#" onclick="openDiv2();" />
+                <area shape="rect" coords="293,262,348,285" alt="kitchentable" href="#" onclick="openDiv2_1();" />
+                <area shape="rect" coords="516,264,635,285" alt="stove" href="#" onclick="openDiv2_2();" />
                 <area shape="rect" coords="325,392,500,367" alt="table" href="#" onclick="openDiv3();" />
                 <area shape="rect" coords="1175,174,1298,352" alt="machine" href="#" onclick="openDiv4();" />
                 <area shape="rect" coords="853,397,1048,142" alt="door" href="#" onclick="openDiv5();" />
@@ -248,6 +290,25 @@
                 </map>
             </div>
         </div>
+        <div id="Section2_1" style="display: none;">
+            <div>
+                <img src="img3_kitchen table.jpg" alt="Nature" usemap="#workmap2_1">
+
+                <map name="workmap2_1">
+                    <area shape="rect" coords="-1,228,61,269" alt="fig2" href="Level3.html" />
+                </map>
+            </div>
+        </div>
+
+        <div id="Section2_2" style="display: none;">
+            <div>
+                <img src="img4_stove.jpg" alt="Nature" usemap="#workmap2_2">
+
+                <map name="workmap2_2">
+                    <area shape="rect" coords="-1,237,63,276" alt="fig2" href="Level3.html" />
+                </map>
+            </div>
+        </div>
 
         <div id="Section3" style="display: none;">
             <div>
@@ -258,10 +319,12 @@
                 </map>
             </div>
         </div>
+        
 
         <div id="Section4" style="display: none;">
             <div class="row">
                 <div class="dev col" data-index="4">
+                    <div class="notify-badge" id="span1"></div>
                     <img src="img3_kitchen table.jpg" alt="kitchentable" style="width: 100%;">
                 </div>
                 <div class="dev col" data-index="2" >
