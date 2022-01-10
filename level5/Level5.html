@@ -74,7 +74,7 @@
     function openDiv2() {
         //blackBoard
         $('img[usemap]').rwdImageMaps();
-        if(localStorage.getItem('scale')=='true'){
+        if(localStorage.getItem('lvl5Scale')=='true'){
             $('#Section12').show();
             $('#Section1').hide();   
             $('#Section2').hide();
@@ -391,53 +391,113 @@
     function openDiv9() {
         //drawerBottom
         $('img[usemap]').rwdImageMaps();
-        $('#Section18').show();
-        $('#Section1').hide();   
-        $('#Section2').hide();
-        $('#Section3').hide();
-        $('#Section4').hide();
-        $('#Section5').hide();
-        $('#Section6').hide();
-        $('#Section7').hide();
-        $('#Section8').hide();
-        $('#Section9').hide();
-        $('#Section10').hide();
-        $('#Section11').hide();
-        $('#Section12').hide();
-        $('#Section13').hide();
-        $('#Section14').hide();
-        $('#Section15').hide();
-        $('#Section16').hide();
-        $('#Section17').hide();
-        $('#Section19').hide();
-        $('#Section20').hide();
-        $('#Section21').hide();
+        if(localStorage.getItem('lvl5DrawerBottom')=='true'){
+            $('#Section19').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+            localStorage.setItem('lvl5Key','true')
+        }
+        else{
+            lvl5TxtPwd.value=""
+            $('#Section18').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+        }
     }
     
     function openDiv10() {
         //secretDoor
         $('img[usemap]').rwdImageMaps();
-        $('#Section9').show();
-        $('#Section1').hide();   
-        $('#Section2').hide();
-        $('#Section3').hide();
-        $('#Section4').hide();
-        $('#Section5').hide();
-        $('#Section6').hide();
-        $('#Section7').hide();
-        $('#Section8').hide();
-        $('#Section10').hide();
-        $('#Section11').hide();
-        $('#Section12').hide();
-        $('#Section13').hide();
-        $('#Section14').hide();
-        $('#Section15').hide();
-        $('#Section16').hide();
-        $('#Section17').hide();
-        $('#Section18').hide();
-        $('#Section19').hide();
-        $('#Section20').hide();
-        $('#Section21').hide();
+        if(localStorage.getItem('lvl5SecretDoor')=='true'){
+            $('#Section10').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+            localStorage.setItem('lvl5Scale','true')
+        }
+        else{
+            for(var i=0;i<5;i++){
+                    document.getElementsByName('row1')[i].checked=false
+                    document.getElementsByName('row2')[i].checked=false
+                    document.getElementsByName('row3')[i].checked=false
+                    document.getElementsByName('row4')[i].checked=false
+                    document.getElementsByName('row5')[i].checked=false
+                }
+            $('#Section9').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+        }
     }
     
     function openDiv11() {
@@ -502,12 +562,25 @@
         }
         openDiv8.call()
     }
+
+    function drawerBottomVerify(){
+        if(lvl5TxtPwd.value=="253"){
+            localStorage.setItem('lvl5DrawerBottom','true')
+        }
+        openDiv9.call()
+    }
     
     function secretDoorVerfiy(){
-        console.log(document.getElementsByName('1_1')[0].checked)
-        if(document.getElementsByName('1_1').checked){
-            alert("success")
+        if(
+            document.getElementsByName('row1')[3].checked &&
+            document.getElementsByName('row2')[1].checked &&
+            document.getElementsByName('row3')[2].checked &&
+            document.getElementsByName('row3')[4].checked &&
+            document.getElementsByName('row4')[1].checked
+        ){
+            localStorage.setItem('lvl5SecretDoor','true')
         }
+        openDiv10.call()
     }
     </script>
 
@@ -592,9 +665,6 @@
         <div id="Section6" style="display: none;">
             <div>
                 <img src="5_sun painting.jpg" alt="Nature" usemap="#workmap5">
-                <label class="custom-control-label" for="chkPasswd">Enter the password</label>
-                <input type="text" id="txtpwd">
-                <a class="btn btn-large  btn-secondary" style="width:100px;" onclick="openDiv7();">Go</a>
 
                 <map name="workmap5">
                     <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
@@ -780,6 +850,8 @@
         <div id="Section18" style="display: none;">
             <div >
                 <img src="17_wooden safe closed.jpg" alt="Nature" usemap="#workmap17">
+                <input type ="text" id ="lvl5TxtPwd" style="position: absolute;top: 65%; left: 50%; transform: translate(-40%,-40%)">
+                <button class="btn btn-success" style="position: absolute;top: 70%; left: 50%; transform: translate(-40%,-40%)" onclick="drawerBottomVerify();">Check</button> 
                 <map name="workmap17">
                     <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
                 </map>
