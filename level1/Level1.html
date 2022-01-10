@@ -256,18 +256,24 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-6">
-                <p id ="demo"></p>
+        <div style="padding-top: 10px;" class="row d-flex justify-content-between">
+            <div></div>
+            <div style="padding-left: 130px;">
+                <span class="btn btn-info" id ="demo"></span>
+                <a class="btn btn-danger" style="height: 40px;" href ="../level1/Level1.html">Reset Game</a>
             </div>
-            <div class="col-md-2">               
-                <b> <label id="lblWelcome">Welcome Guest</label></b>
+            <div>
+                <b> <label class="badge badge-dark" style="font-size: larger;" id="lblWelcome">Welcome Guest</label></b>
             </div>
         </div>
+    <div class="row d-flex justify-content-between" style="padding-top: 15px; padding-bottom: 15px;">
+        <div></div>
+        <span style="font-size: xx-large;" class="badge badge-warning">ROOM 1 - MAIN ROOM</span>
+        <div></div>
+    </div>
         <div id="Section1">
             
-            <img src="00Sample.jpg" alt="Nature" usemap="#workmap">
+            <img src="img0_main room.jpg" alt="Nature" usemap="#workmap">
             <map name="workmap">
                 <area shape="rect" coords="530,709,729,848" alt="plant" href="#" onclick="openDiv1();" />
                 <area shape="rect" coords="309,773,86,687" alt="laptop" href="#" onclick="openDiv2();" />
