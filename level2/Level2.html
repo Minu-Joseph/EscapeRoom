@@ -36,8 +36,8 @@
         img[usemap] {
             border: none;
             height: auto;
-            max-width: 100%;
-            width: auto;
+            width: 100%;
+            /* width: auto; */
         }
     </style>
 
@@ -214,6 +214,7 @@
             $('#Section14').hide();
 
             setTimeout(function(){
+        $('img[usemap]').rwdImageMaps();  
                 $('#Section12').show();
                 $('#Section1').hide();
                 $('#Section2').hide();
@@ -433,7 +434,8 @@
                 <img src="img5_locker password.jpg" alt="Nature" usemap="#workmap11">
                 <map name="workmap11">
                     <area target="" alt="" title="" href="Level2.html" coords="3,910,183,909,3,788" shape="poly">
-                </map><div style="margin-top:5%;">
+                </map>
+                <div style="margin-top:5%;">
                     <div class="row d-flex justify-content-center"><span style="font-size: larger;"><strong>ENTER PATTERN</strong></span></div>
                     <div class="row d-flex justify-content-center" >
                         <span style="padding: 55px;"><input style="width: 35px; height: 35px;" value="1" class="form-check-input" type="checkbox" name="row1"></span>
