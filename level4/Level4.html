@@ -47,6 +47,8 @@
         var  keyHammer = "false"
         var keyLock ="false"
         var keyDoor = "false"
+        var keyPic1 ="false"
+        var keyPic2 ="false"
 
         function closeSection2() {
             $('#Section2').hide();
@@ -84,6 +86,14 @@
             $('#Section9').hide();
             $('#Section1').show();
         }
+        function closeSection11() {
+            $('#Section11').hide();
+            $('#Section1').show();
+        }
+        function closeSection12() {
+            $('#Section12').hide();
+            $('#Section1').show();
+        }
         function checkPwd()
         {
             if(txtpwd.value == "536")
@@ -94,8 +104,10 @@
                 keyDoor ="true"
             }
             else{
-                $('#Section5').show();
-                $('#Section7').hide();
+                $('img[usemap]').rwdImageMaps();
+                $('#Section7').show();
+                txtpwd.value = ""
+                //$('#Section7').hide();
             }
             $('#Section1').hide();
             $('#Section3').hide();
@@ -181,6 +193,37 @@
             $('#Section10').hide();
 
        }
+       function openDiv6() {            
+           
+            $('#Section11').show();
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section6').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section1').hide();
+            $('#Section12').hide();
+            keyPic1 = "true"
+
+       }
+
+       function openDiv7() {            
+           
+           $('#Section12').show();
+           $('#Section2').hide();
+           $('#Section3').hide();
+           $('#Section4').hide();
+           $('#Section6').hide();
+           $('#Section8').hide();
+           $('#Section9').hide();
+           $('#Section10').hide();
+           $('#Section1').hide();
+           $('#Section11').hide();
+           keyPic2 = "true"
+
+      }
 
        function openDiv5() {            
            
@@ -233,6 +276,8 @@
             <area shape="rect" coords="962,371,1029,406" alt="" href="#" onclick="openDiv3();" />
             <area shape="rect" coords="956,403,1097,523" alt="" href="#" onclick="openDiv4();" />
             <area shape="rect" coords="725,275,898,511" alt="" href="#" onclick="openDiv5();" />
+            <area shape="rect" coords="488,265,651,391" alt="" href="#" onclick="openDiv6();" />
+            <area shape="rect" coords="919,219,1140,378" alt="" href="#" onclick="openDiv7();" />
         </map>
         <div class="row">
             <div class="col-sm-4"></div>
@@ -324,6 +369,24 @@
                 </div>
               </div>
 
+        </div>
+    </div>
+
+    <div id="Section11" style="display: none;">
+        <div >
+            <img src="img4_painting 1.jpg" alt="" usemap="#workmap8">
+            <map name="workmap8">
+                <area shape="rect" coords="1,784,188,914" alt="fig2" href="#" onclick="closeSection11();" />
+            </map>
+        </div>
+    </div>
+
+    <div id="Section12" style="display: none;">
+        <div >
+            <img src="img4_painting 2.jpg" alt="" usemap="#workmap9">
+            <map name="workmap9">
+                <area shape="rect" coords="-1,793,177,908" alt="fig2" href="#" onclick="closeSection12();" />
+            </map>
         </div>
     </div>
     <script>
