@@ -24,9 +24,9 @@
     <script src="jquery.rwdImageMaps.min.js"></script>
     <script src="jquery.rwdImageMaps.js"></script>
     <style>
-       body{
-           font-family: cursive;
-       }
+        body {
+            font-family: cursive;
+        }
 
         img[usemap] {
             border: none;
@@ -34,18 +34,18 @@
             width: 100%;
             /* width: auto; */
         }
-    
     </style>
     <script>
-         $(document).ready(function (e) {            
+        $(document).ready(function (e) {
             $('img[usemap]').rwdImageMaps();
-            $('area').on('click', function () {               
+            $('area').on('click', function () {
                 $('img[usemap]').rwdImageMaps();
-               
-            });
-        });
-        localStorage.setItem('saved_countdown',new Date().getTime() + (1200 + 2) * 1000)
-       // document.getElementById("demo").innerHTML = "";
+
+            });           
+        });              
+
+        localStorage.setItem('saved_countdown', new Date().getTime() + (1200 + 2) * 1000)
+        // document.getElementById("demo").innerHTML = "";
         /* level 3 keys --remove */
         localStorage.removeItem('keyDoor');
         localStorage.removeItem('keyMachine');
@@ -69,7 +69,7 @@
         localStorage.removeItem('lvl5SecretDoor');
         localStorage.removeItem('lvl5TxtPwd');
 
-  
+
         var keyFlag = "false";
         var paperFlag = "false"
         var compPwd = "false"
@@ -86,7 +86,7 @@
             $("#Section8").hide();
             $("#Section9").hide();
             $("#Section10").hide();
-            $("#Section11").hide(); 
+            $("#Section11").hide();
             $("#Section12").hide();
 
         }
@@ -101,78 +101,74 @@
             $("#Section8").hide();
             $("#Section9").hide();
             $("#Section10").hide();
-            $("#Section11").hide();  
-            $("#Section13").hide();         
+            $("#Section11").hide();
+            $("#Section13").hide();
             $("#Section12").show();
             setTimeout(function () { $('#lvlclearmodal').modal('show'); }, 500)
 
         }
-        
-        function openDiv1() {     
-            $('img[usemap]').rwdImageMaps();      
+
+        function openDiv1() {
+            $('img[usemap]').rwdImageMaps();
             keyFlag = "true"
             $('#Section2').show();
             $('#Section1').hide();
         }
 
-        function openDiv2() {   
+        function openDiv2() {
             $('img[usemap]').rwdImageMaps();
-            if(paperFlag == "true")
-            {
-                $('#Section3').show(); 
+            if (paperFlag == "true") {
+                $('#Section3').show();
             }
-            else{
-            $('#Section5').show(); 
-            
-        }     
-        $('#Section1').hide();  
+            else {
+                $('#Section5').show();
+
+            }
+            $('#Section1').hide();
         }
-        function openDiv3() {  
-            $('img[usemap]').rwdImageMaps(); 
-            if(keyFlag == "true")
-            {
+        function openDiv3() {
+            $('img[usemap]').rwdImageMaps();
+            if (keyFlag == "true") {
                 $('#Section7').show();
                 $('#Section1').hide();
-                $('#Section3').hide(); 
-                $('#Section2').hide(); 
+                $('#Section3').hide();
+                $('#Section2').hide();
                 $('#Section5').hide();
                 $('#Section4').hide();
-                $('#Section6').hide();  
-                $('#Section8').hide();      
-                paperFlag="true"        
-            } 
-            else{
+                $('#Section6').hide();
+                $('#Section8').hide();
+                paperFlag = "true"
+            }
+            else {
                 $('#Section7').hide();
                 $('#Section1').hide();
-                $('#Section3').hide(); 
-                $('#Section2').hide(); 
+                $('#Section3').hide();
+                $('#Section2').hide();
                 $('#Section5').hide();
                 $('#Section4').hide();
                 $('#Section6').show();
-            } 
+            }
 
-            if(paperFlag == "true")
-            {
-                $('img[usemap]').rwdImageMaps(); 
+            if (paperFlag == "true") {
+                $('img[usemap]').rwdImageMaps();
                 $('#Section8').show();
                 $('#Section7').show();
                 $('#Section1').hide();
-                $('#Section3').hide(); 
-                $('#Section2').hide(); 
+                $('#Section3').hide();
+                $('#Section2').hide();
                 $('#Section5').hide();
                 $('#Section4').hide();
                 $('#Section6').hide();
             }
-            
+
         }
-        function checkPwd()
-        {
+        function checkPwd() {
             $('img[usemap]').rwdImageMaps();
             if (txtpwd.value == "TAKI") {
                 $('#Section4').show();
                 $('#Section1').hide();
-                $('#Section3').hide(); 
-                $('#Section2').hide(); 
+                $('#Section3').hide();
+                $('#Section2').hide();
                 $('#Section5').hide();
                 compPwd = "true"
             }
@@ -182,95 +178,90 @@
                 txtpwd.value = ""
                 $('#Section1').hide();
                 $('#Section4').hide();
-               // $('#Section3').hide(); 
+                // $('#Section3').hide(); 
                 $('#Section2').hide();
-                
+
             }
         }
 
-        function openDiv4()
-        {
+        function openDiv4() {
             $('img[usemap]').rwdImageMaps();
-            if(compPwd == "true")
-            {
-                $('#Section9').show();                
+            if (compPwd == "true") {
+                $('#Section9').show();
                 $('#Section4').hide();
-                $('#Section3').hide(); 
+                $('#Section3').hide();
                 $('#Section2').hide();
                 $('#Section1').hide();
                 $('#Section5').hide();
-                $('#Section6').hide(); 
+                $('#Section6').hide();
                 $('#Section7').hide();
                 $('#Section8').hide();
             }
-            else{
+            else {
                 $('#Section10').show();
                 $('#Section9').hide();
                 $('#Section4').hide();
-                $('#Section3').hide(); 
+                $('#Section3').hide();
                 $('#Section2').hide();
                 $('#Section1').hide();
                 $('#Section5').hide();
-                $('#Section6').hide(); 
+                $('#Section6').hide();
                 $('#Section7').hide();
                 $('#Section8').hide();
             }
         }
-        function openDiv5()
-        {
+        function openDiv5() {
             $('img[usemap]').rwdImageMaps();
-            
-            if(keydoor == "true")
-            {
+
+            if (keydoor == "true") {
                 OpenDoor();
             }
-            else{
+            else {
                 $('#Section11').show();
                 $('#Section9').hide();
                 $('#Section4').hide();
-                $('#Section3').hide(); 
+                $('#Section3').hide();
                 $('#Section2').hide();
                 $('#Section1').hide();
                 $('#Section5').hide();
-                $('#Section6').hide(); 
+                $('#Section6').hide();
                 $('#Section7').hide();
                 $('#Section8').hide();
                 $('#Section10').hide();
             }
         }
-        function checklockerPwd()
-        {
+        function checklockerPwd() {
             $('img[usemap]').rwdImageMaps();
             if (txtlockerpwd.value == "1886") {
                 $('#Section13').show();
                 $('#Section1').hide();
-                $('#Section3').hide(); 
-                $('#Section2').hide(); 
+                $('#Section3').hide();
+                $('#Section2').hide();
                 $('#Section5').hide();
                 $('#Section4').hide();
                 $('#Section6').hide();
                 $('#Section7').hide();
-                $('#Section8').hide(); 
+                $('#Section8').hide();
                 $('#Section9').hide();
                 $('#Section10').hide();
                 keydoor = "true"
             }
             else {
-                txtlockerpwd.value =""
+                txtlockerpwd.value = ""
                 $('#Section9').show();
                 $('#Section1').hide();
                 $('#Section4').hide();
-                $('#Section3').hide(); 
+                $('#Section3').hide();
                 $('#Section2').hide();
                 $('#Section13').hide();
                 $('#Section5').hide();
-                $('#Section6').hide(); 
-                $('#Section7').hide(); 
+                $('#Section6').hide();
+                $('#Section7').hide();
                 $('#Section8').hide();
-               // $('#Section9').hide();               
+                // $('#Section9').hide();               
                 $('#Section11').hide();
-               
-                
+
+
             }
         }
     </script>
@@ -284,77 +275,80 @@
                 <button data-toggle="modal" data-target="#hintModal" class="btn btn-primary">HINTS</button>
                 <button data-toggle="modal" data-target="#placesModal" class="btn btn-warning">PLACES</button>
             </div>
-            <div  id="placesModal" class="modal" tabindex="-1" role="dialog">
+            <div id="placesModal" class="modal" tabindex="-1" role="dialog">
                 <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content" style="background-color: rgb(57 191 108 / 78%); padding: 45px;">
-                    <div class="modal-body">
-                        <div class="row d-flex justify-content-center" style=" font-size: large; font-weight: 700; margin-top: 15px; margin-bottom: 15px;">
-                            
-                            <div>
-                                <ol>
-                                    <li>Computer</li>
-                                    <li>Plant</li>
-                                    <li>Main door</li>
-                                    <li>Drawers</li>
-                                    <li>Cupboard/ Locker</li>
-                                </ol>
+                    <div class="modal-content" style="background-color: rgb(57 191 108 / 78%); padding: 45px;">
+                        <div class="modal-body">
+                            <div class="row d-flex justify-content-center"
+                                style=" font-size: large; font-weight: 700; margin-top: 15px; margin-bottom: 15px;">
+
+                                <div>
+                                    <ol>
+                                        <li>Computer</li>
+                                        <li>Plant</li>
+                                        <li>Main door</li>
+                                        <li>Drawers</li>
+                                        <li>Cupboard/ Locker</li>
+                                    </ol>
+                                </div>
                             </div>
                         </div>
+                        <div class="modal-footer row d-flex justify-content-center">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Return to game</button>
+                        </div>
                     </div>
-                    <div class="modal-footer row d-flex justify-content-center">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Return to game</button>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            
-            
-    <div  id="hintModal" class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content" style="background-color: rgb(57 191 108 / 78%); padding: 45px;">
-            <div class="modal-body">
-                <div class="row d-flex justify-content-center" style=" font-size: large; font-weight: 700; margin-top: 15px; margin-bottom: 15px;">
-                    
-                <div>
-                    
-                    <ol>
-                        <li>
-                            <label>Check all places! One clue will lead you to another.
-                                </label>
-                        </li>
-                        <li>
-                            <label>
-                                You think you can open a computer without a password?</label>
-                        </li>
-                        <li>
-                            <label>Is it possible to open a locker if you don't know the password?</label>
-                        </li>
-                    </ol>                   
-                   
-                </div>
                 </div>
             </div>
-            <div class="modal-footer row d-flex justify-content-center">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Return to game</button>
-              </div>
-          </div>
-        </div>
-      </div>
+
+
+            <div id="hintModal" class="modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" style="background-color: rgb(57 191 108 / 78%); padding: 45px;">
+                        <div class="modal-body">
+                            <div class="row d-flex justify-content-center"
+                                style=" font-size: large; font-weight: 700; margin-top: 15px; margin-bottom: 15px;">
+
+                                <div>
+
+                                    <ol>
+                                        <li>
+                                            <label>Check all places! One clue will lead you to another.
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                You think you can open a computer without a password?</label>
+                                        </li>
+                                        <li>
+                                            <label>Is it possible to open a locker if you don't know the
+                                                password?</label>
+                                        </li>
+                                    </ol>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer row d-flex justify-content-center">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Return to game</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div style="padding-left: 130px;">
-                <span class="btn btn-info" id ="demo"></span>
-                <a class="btn btn-danger" style="height: 40px;" href ="../level1/Level1.html">Reset Game</a>
+                <span class="btn btn-info" id="demo"></span>
+                <a class="btn btn-danger" style="height: 40px;" href="../level1/Level1.html">Reset Game</a>
             </div>
             <div style="padding-right: 15px;">
                 <b> <label class="badge badge-dark" style="font-size: larger;" id="lblWelcome">Welcome Guest</label></b>
             </div>
         </div>
-    <div class="row d-flex justify-content-between" style="padding-top: 15px; padding-bottom: 15px;">
-        <div></div>
-        <span style="font-size: xx-large;" class="badge badge-warning">ROOM 1 - MAIN ROOM</span>
-        <div></div>
-    </div>
+        <div class="row d-flex justify-content-between" style="padding-top: 15px; padding-bottom: 15px;">
+            <div></div>
+            <span style="font-size: xx-large;" class="badge badge-warning">ROOM 1 - MAIN ROOM</span>
+            <div></div>
+        </div>
         <div id="Section1">
-            
+
             <img src="img0_main room.jpg" alt="Nature" usemap="#workmap">
             <map name="workmap">
                 <area shape="rect" coords="499,591,653,705" alt="plant" href="#" onclick="openDiv1();" />
@@ -365,7 +359,7 @@
             </map>
         </div>
 
-        
+
 
         <div id="Section2" style="display: none;">
             <div>
@@ -380,8 +374,10 @@
         <div id="Section3" style="display: none;">
             <div>
                 <img src="02Sample.jpg" alt="Nature" usemap="#workmap2">
-                <input type ="text" id ="txtpwd" style="position: absolute;top: 90%; left: 70%; transform: translate(-40%,-40%)">
-                <a style="position: absolute;top: 90%; left: 85%; transform: translate(-40%,-40%)" href = "#" onclick="checkPwd();">Check</a>               
+                <input type="text" id="txtpwd"
+                    style="position: absolute;top: 90%; left: 70%; transform: translate(-40%,-40%)">
+                <a style="position: absolute;top: 90%; left: 85%; transform: translate(-40%,-40%)" href="#"
+                    onclick="checkPwd();">Check</a>
                 <map name="workmap2">
                     <area shape="rect" coords="58,904,251,1030" alt="fig2" href="javascript:showMainPage();" />
                 </map>
@@ -437,11 +433,13 @@
             </div>
         </div>
         <div id="Section9" style="display: none;">
-            <div >
+            <div>
                 <img src="img4_cupboard locker.jpg" alt="Nature" usemap="#workmap8">
-                <input type ="text" id ="txtlockerpwd" style="position: absolute;top: 90%; left: 70%; transform: translate(-40%,-40%)">
-                <a style="position: absolute;top: 90%; left: 85%; transform: translate(-40%,-40%)" href = "#" onclick="checklockerPwd();">Check</a>               
-             
+                <input type="text" id="txtlockerpwd"
+                    style="position: absolute;top: 90%; left: 70%; transform: translate(-40%,-40%)">
+                <a style="position: absolute;top: 90%; left: 85%; transform: translate(-40%,-40%)" href="#"
+                    onclick="checklockerPwd();">Check</a>
+
                 <map name="workmap8">
                     <area shape="rect" coords="-1,785,185,911" alt="fig2" href="javascript:showMainPage();" />
                 </map>
@@ -449,7 +447,7 @@
         </div>
 
         <div id="Section10" style="display: none;">
-            <div >
+            <div>
                 <img src="img4_cupboard closed.jpg" alt="Nature" usemap="#workmap9">
 
                 <map name="workmap9">
@@ -458,7 +456,7 @@
             </div>
         </div>
         <div id="Section13" style="display: none;">
-            <div >
+            <div>
                 <img src="img4_cupboard opened.jpg" alt="Nature" usemap="#workmap11">
 
                 <map name="workmap11">
@@ -467,7 +465,7 @@
             </div>
         </div>
         <div id="Section11" style="display: none;">
-            <div >
+            <div>
                 <img src="img5_exitdoor closed.jpg" alt="Nature" usemap="#workmap10">
 
                 <map name="workmap10">
@@ -522,7 +520,7 @@
                 var distance = time - now;
 
                 // Time counter
-               // var counter = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                // var counter = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
                 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -530,7 +528,7 @@
                 //alert(counter)
 
                 // Output the result in an element with id="demo"
-                document.getElementById("demo").innerHTML =  minutes + "m " + seconds + "s ";
+                document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
 
                 // If the count down is over, write some text 
                 if (distance <= 0) {
