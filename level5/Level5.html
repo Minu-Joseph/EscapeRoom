@@ -154,29 +154,57 @@
     
     function openDiv4() {
         //painting
-        $('img[usemap]').rwdImageMaps();
-        $('#Section5').show();
-        $('#Section1').hide();   
-        $('#Section2').hide();
-        $('#Section3').hide();
-        $('#Section4').hide();
-        $('#Section6').hide();
-        $('#Section7').hide();
-        $('#Section8').hide();
-        $('#Section9').hide();
-        $('#Section10').hide();
-        $('#Section11').hide();
-        $('#Section12').hide();
-        $('#Section13').hide();
-        $('#Section14').hide();
-        $('#Section15').hide();
-        $('#Section16').hide();
-        $('#Section17').hide();
-        $('#Section18').hide();
-        $('#Section19').hide();
-        $('#Section20').hide();
-        $('#Section21').hide();
-        localStorage.setItem('lvl2Grill','true');
+        if(localStorage.getItem('lvl5Grill') == 'true'){
+            $('img[usemap]').rwdImageMaps();
+            $('#Section5_1').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section5').hide();
+            $('#Section4').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+        }
+        else{
+            $('img[usemap]').rwdImageMaps();
+            $('#Section5').show();
+            $('#Section1').hide();   
+            $('#Section2').hide();
+            $('#Section3').hide();
+            $('#Section4').hide();
+            $('#Section5_1').hide();
+            $('#Section6').hide();
+            $('#Section7').hide();
+            $('#Section8').hide();
+            $('#Section9').hide();
+            $('#Section10').hide();
+            $('#Section11').hide();
+            $('#Section12').hide();
+            $('#Section13').hide();
+            $('#Section14').hide();
+            $('#Section15').hide();
+            $('#Section16').hide();
+            $('#Section17').hide();
+            $('#Section18').hide();
+            $('#Section19').hide();
+            $('#Section20').hide();
+            $('#Section21').hide();
+            localStorage.setItem('lvl5Grill','true');
+        }
     }
     
     function openDiv5() {
@@ -189,6 +217,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section7').hide();
             $('#Section8').hide();
@@ -213,6 +242,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section7').hide();
             $('#Section8').hide();
@@ -234,13 +264,14 @@
     function openDiv6() {
         //sun
         $('img[usemap]').rwdImageMaps();
-        if(localStorage.getItem('lvl2Grill')=='true'){
+        if(localStorage.getItem('lvl5Grill')=='true'){
             $('#Section7').show();
             $('#Section1').hide();   
             $('#Section2').hide();
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section8').hide();
             $('#Section9').hide();
@@ -264,6 +295,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section7').hide();
             $('#Section8').hide();
             $('#Section9').hide();
@@ -292,6 +324,7 @@
         $('#Section3').hide();
         $('#Section4').hide();
         $('#Section5').hide();
+            $('#Section5_1').hide();
         $('#Section6').hide();
         $('#Section7').hide();
         $('#Section8').hide();
@@ -315,6 +348,7 @@
         $('#Section3').hide();
         $('#Section4').hide();
         $('#Section5').hide();
+            $('#Section5_1').hide();
         $('#Section6').hide();
         $('#Section7').hide();
         $('#Section8').hide();
@@ -343,6 +377,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section7').hide();
             $('#Section8').hide();
@@ -373,6 +408,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section7').hide();
             $('#Section8').hide();
@@ -401,6 +437,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section7').hide();
             $('#Section8').hide();
@@ -428,6 +465,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section7').hide();
             $('#Section8').hide();
@@ -456,6 +494,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section7').hide();
             $('#Section8').hide();
@@ -487,6 +526,7 @@
             $('#Section3').hide();
             $('#Section4').hide();
             $('#Section5').hide();
+            $('#Section5_1').hide();
             $('#Section6').hide();
             $('#Section7').hide();
             $('#Section8').hide();
@@ -512,6 +552,7 @@
         $('#Section2').hide();
         $('#Section4').hide();
         $('#Section5').hide();
+            $('#Section5_1').hide();
         $('#Section6').hide();
         $('#Section7').hide();
         $('#Section8').hide();
@@ -734,6 +775,15 @@
                 <img src="4_flower painting.jpg" alt="Nature" usemap="#workmap4">
 
                 <map name="workmap4">
+                    <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
+                </map>
+            </div>
+        </div>
+        <div id="Section5_1" style="display: none;">
+            <div>
+                <img src="4_flower without grill.jpg" alt="Nature" usemap="#workmap4_1">
+
+                <map name="workmap4_1">
                     <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
                 </map>
             </div>
