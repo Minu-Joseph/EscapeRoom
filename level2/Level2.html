@@ -33,6 +33,10 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
+        body{
+           font-family: cursive;
+       }
+
         img[usemap] {
             border: none;
             height: auto;
@@ -302,15 +306,37 @@
 <body>
     <div class="container-fluid">
             <div style="padding-top: 10px;" class="row d-flex justify-content-between">
-                <div></div>
+                <div style="padding-left: 15px;">
+                    <button data-toggle="modal" data-target="#hintModal" class="btn btn-primary">HINT</button>
+                </div>
                 <div style="padding-left: 130px;">
                     <span class="btn btn-info" id ="demo"></span>
                     <a class="btn btn-danger" style="height: 40px;" href ="../level1/Level1.html">Reset Game</a>
                 </div>
-                <div>
+                <div style="padding-right: 15px;">
                     <b> <label class="badge badge-dark" style="font-size: larger;" id="lblWelcome">Welcome Guest</label></b>
                 </div>
             </div>
+            
+    <div  id="hintModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="background-color: rgb(248, 171, 99);">
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center" style="font-family:'Brush Script MT', cursive; font-size: x-large; font-weight: 700; margin-top: 15px; margin-bottom: 15px;">
+                    
+                    <div>
+                        <p>Check each and every corner of the room<br>Find your way out of this room
+                        </p>
+    
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer row d-flex justify-content-center">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Return to game</button>
+              </div>
+          </div>
+        </div>
+      </div>
         <div class="row d-flex justify-content-between" style="padding-top: 15px; padding-bottom: 15px;">
             <div></div>
             <span style="font-size: xx-large;" class="badge badge-warning">ROOM 2 - LIVING ROOM</span>
@@ -326,14 +352,6 @@
                 <area shape="rect" coords="1690,410,1603,261" alt="locker" href="#" onclick="openDiv6();" />
                 <area shape="rect" coords="1911,552,1659,445" alt="laptop" href="#" onclick="openDiv7();" />
             </map>
-            <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-6">
-                    <p>Check each and every corner of the room<br>Find your way out of this room
-                    </p>
-
-                </div>
-            </div>
         </div>
         <div id="Section2" style="display: none;">
             <div>
