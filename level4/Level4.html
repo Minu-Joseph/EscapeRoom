@@ -102,6 +102,14 @@
             $('#Section12').hide();
             $('#Section1').show();
         }
+        function closeSection13() {
+            $('#Section13').hide();
+            $('#Section1').show();
+        }
+        function closeSection14() {
+            $('#Section14').hide();
+            $('#Section1').show();
+        }
         function checkPwd()
         {
             if(txtpwd.value == "536")
@@ -491,7 +499,9 @@
             <img src="img1_bed 1.jpg" alt="" usemap="#workmap11">
             <map name="workmap11">
                 <area shape="rect" coords="644,339,1128,639" alt="fig2" href="#" onclick="showBedSection();"/>
+                <area shape="rect" coords="6,797,186,912" alt="fig2" href="#" onclick="closeSection13();"/>
             </map>
+           
         </div>
     </div>
     <div id="Section14" style="display: none;">
@@ -499,6 +509,7 @@
             <img src="img2_pillow 1.jpg" alt="" usemap="#workmap12">
             <map name="workmap12">
                 <area shape="rect" coords="439,343,1647,658" alt="fig2" href="#" onclick="showPillowSection();" />
+                <area shape="rect" coords="1,784,179,912" alt="fig2" href="#" onclick="closeSection14();" />
             </map>
         </div>
     </div>
