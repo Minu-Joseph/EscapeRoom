@@ -74,12 +74,16 @@
             $('#Section4').hide();
             $('#Section1').show();
         }
-        function closeSection5() {
-            $('#Section5').hide();
+        function closeSection7() {
+            $('#Section7').hide();
             $('#Section1').show();
         }
         function closeSection6() {
             $('#Section6').hide();
+            $('#Section1').show();
+        }
+        function closeSection5() {
+            $('#Section5').hide();
             $('#Section1').show();
         }
         function closeSection8() {
@@ -160,7 +164,7 @@
         function openDiv3() {            
            
             if (keyHammer == "true") {
-                $('#Section5').show();
+                $('#Section7').show();
                 keyLock = "true"
             }
             else{
@@ -171,7 +175,7 @@
             $('#Section2').hide();
             $('#Section3').hide();
             $('#Section4').hide();
-            $('#Section7').hide();
+           // $('#Section7').hide();
             $('#Section8').hide();
             $('#Section9').hide();
             $('#Section10').hide();
@@ -302,7 +306,7 @@
             <area shape="rect" coords="588,564,395,622" alt="" href="#" onclick="openDiv1();" />
             <area shape="rect" coords="1147,482,1326,525" alt="" href="#" onclick="openDiv2();" />
             <area shape="rect" coords="962,371,1029,406" alt="" href="#" onclick="openDiv3();" />
-            <area shape="rect" coords="956,403,1097,523" alt="" href="#" onclick="openDiv4();" />
+            <!-- <area shape="rect" coords="956,403,1097,523" alt="" href="#" onclick="openDiv4();" /> -->
             <area shape="rect" coords="725,275,898,511" alt="" href="#" onclick="openDiv5();" />
             <area shape="rect" coords="488,265,651,391" alt="" href="#" onclick="openDiv6();" />
             <area shape="rect" coords="919,219,1140,378" alt="" href="#" onclick="openDiv7();" />
@@ -350,10 +354,12 @@
         </div>
         <div id="Section7" style="display: none;">
             <div >
-                <img src="img7_final hint.jpg" alt="" style ="width:100%">
+                <img src="img5_locker 2.jpg" alt="" style ="width:100%" usemap="#workmap8">
                 <input type ="text" id ="txtpwd" style="position: absolute;top: 90%; left: 70%; transform: translate(-40%,-40%)">
                 <a style="position: absolute;top: 90%; left: 85%; transform: translate(-40%,-40%)" href = "#" onclick="checkPwd();">Check</a>
-                
+                <map name="workmap8">
+                    <area shape="rect" coords="-1,631,136,749" alt="fig2" href="#" onclick="closeSection7();" />
+                </map>
             </div>
         </div>
         <div id="Section8" style="display: none;">
@@ -396,8 +402,8 @@
 
     <div id="Section11" style="display: none;">
         <div >
-            <img src="img4_painting 1.jpg" alt="" usemap="#workmap8">
-            <map name="workmap8">
+            <img src="img4_painting 1.jpg" alt="" usemap="#workmap9">
+            <map name="workmap9">
                 <area shape="rect" coords="1,784,188,914" alt="fig2" href="#" onclick="closeSection11();" />
             </map>
         </div>
@@ -405,8 +411,8 @@
 
     <div id="Section12" style="display: none;">
         <div >
-            <img src="img4_painting 2.jpg" alt="" usemap="#workmap9">
-            <map name="workmap9">
+            <img src="img4_painting 2.jpg" alt="" usemap="#workmap10">
+            <map name="workmap10">
                 <area shape="rect" coords="-1,793,177,908" alt="fig2" href="#" onclick="closeSection12();" />
             </map>
         </div>
