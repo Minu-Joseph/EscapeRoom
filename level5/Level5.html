@@ -419,7 +419,9 @@
             localStorage.setItem('lvl5Key','true')
         }
         else{
-            lvl5TxtPwd.value=""
+            lvl5TxtPwd1.value=""
+            lvl5TxtPwd2.value=""
+            lvl5TxtPwd3.value=""
             $('#Section18').show();
             $('#Section1').hide();   
             $('#Section2').hide();
@@ -567,7 +569,7 @@
     }
 
     function drawerBottomVerify(){
-        if(lvl5TxtPwd.value == "352"){
+        if(lvl5TxtPwd1.value == "3" && lvl5TxtPwd2.value == "5" && lvl5TxtPwd3.value == "2"){
             localStorage.setItem('lvl5DrawerBottom','true')
         }
         openDiv9.call()
@@ -870,8 +872,10 @@
         <div id="Section18" style="display: none;">
             <div >
                 <img src="17_wooden safe closed.jpg" alt="Nature" usemap="#workmap17">
-                <input type ="text" id ="lvl5TxtPwd" style="position: absolute;top: 80%; left: 50%; transform: translate(-40%,-40%)">
-                <button class="btn btn-success" style="position: absolute;top: 85%; left: 50%; transform: translate(-40%,-40%)" onclick="drawerBottomVerify();">Check</button> 
+                <input type ="text" id ="lvl5TxtPwd1" style="padding: 20px; width: 5%; position: absolute;top: 85%; left: 20%; transform: translate(-40%,-40%)">
+                <input type ="text" id ="lvl5TxtPwd2" style="padding: 20px; width: 5%; position: absolute;top: 85%; left: 50%; transform: translate(-40%,-40%)">
+                <input type ="text" id ="lvl5TxtPwd3" style="padding: 20px; width: 5%; position: absolute;top: 85%; left: 80%; transform: translate(-40%,-40%)">
+                <button class="btn btn-lg btn-success" style="position: absolute;top: 100%; left: 50%; transform: translate(-40%,-40%)" onclick="drawerBottomVerify();">Check</button> 
                 <map name="workmap17">
                     <area target="" alt="" title="" href="Level5.html" coords="3,910,183,909,3,788" shape="poly">
                 </map>
