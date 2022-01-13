@@ -45,6 +45,7 @@
             });
         });
         localStorage.setItem('saved_countdown',new Date().getTime() + (1200 + 2) * 1000)
+        localStorage.setItem('noOfHints',2)
        // document.getElementById("demo").innerHTML = "";
         /* level 3 keys --remove */
         localStorage.removeItem('keyDoor');
@@ -74,6 +75,22 @@
         var paperFlag = "false"
         var compPwd = "false"
         var keydoor = "false"
+        
+        function hintBtn(){
+            if(localStorage.getItem('noOfHints') <= 0){
+                $('#noHintModal').modal('show')
+            }else{
+                $('#hintModal').modal('show')
+            }
+            var count = localStorage.getItem('noOfHints')
+            if(count>0){
+                localStorage.setItem('noOfHints',count-1)
+            }else{
+                localStorage.setItem('noOfHints',0)
+            }
+            document.getElementById('noOfHints').innerText=localStorage.getItem('noOfHints')>=0 ? localStorage.getItem('noOfHints') : 0
+        }
+
         function showMainPage() {
             $('img[usemap]').rwdImageMaps();
             $("#Section2").hide();
@@ -281,7 +298,7 @@
     <div class="container-fluid">
         <div style="padding-top: 10px;" class="row d-flex justify-content-between">
             <div style="padding-left: 15px;">
-                <button data-toggle="modal" data-target="#hintModal" class="btn btn-primary">HINTS</button>
+                <button class="btn btn-primary" onclick="hintBtn()">HINTS <span id="noOfHints" class="badge bg-secondary">0</span></button>
                 <button data-toggle="modal" data-target="#placesModal" class="btn btn-warning">PLACES</button>
             </div>
             <div  id="placesModal" class="modal" tabindex="-1" role="dialog">
@@ -308,6 +325,24 @@
                 </div>
               </div>
             
+              
+    <div  id="noHintModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="background-color: rgb(255 255 255 / 78%); padding: 45px;">
+            <div class="modal-body">
+                <div class="row d-flex justify-content-center" style=" font-size: large; font-weight: 700; margin-top: 15px; margin-bottom: 15px;">
+                    
+                <div style="text-align: center;">
+                    Sorry, You have used up all the hints<br>Now you are on your own :(
+                </div>
+                </div>
+            </div>
+            <div class="modal-footer row d-flex justify-content-center">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Return to game</button>
+              </div>
+          </div>
+        </div>
+      </div>
             
     <div  id="hintModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -340,7 +375,7 @@
           </div>
         </div>
       </div>
-            <div style="padding-left: 130px;">
+            <div>
                 <span class="btn btn-info" id ="demo"></span>
                 <a class="btn btn-danger" style="height: 40px;" href ="../level1/Level1.html">Reset Game</a>
             </div>
@@ -352,6 +387,9 @@
         <div></div>
         <span style="font-size: xx-large;" class="badge badge-warning">ROOM 1 - MAIN ROOM</span>
         <div></div>
+    </div>
+    <div class="row d-flex justify-content-center" style=" padding-bottom: 15px;">
+        <span style="font-size:  large;" class="badge badge-secondary">No level completed, 0% progress</span>
     </div>
         <div id="Section1">
             
@@ -497,6 +535,8 @@
             var name = localStorage.getItem('name')
             var label_text = $('#lblWelcome').text(); //Get the text            
             document.getElementById('lblWelcome').innerText = "Welcome " + name;
+            document.getElementById('noOfHints').innerText = localStorage.getItem('noOfHints')
+            
             $('img[usemap]').rwdImageMaps();
             /*Timer logic */
             var time = 1200; // This is the time allowed
